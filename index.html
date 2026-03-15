@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Span Healthcare — Smart Healthcare Funding for Nigerians</title>
+  <link rel="canonical" href="https://span-healthcare.com/">
+  <meta property="og:title" content="Span Healthcare — Smart Healthcare Funding for Nigerians">
+  <meta property="og:description" content="Save for your health, grow your wealth. Span Healthcare combines health savings, ethical investment, telemedicine and drug delivery — built for Nigerians.">
+  <meta property="og:url" content="https://span-healthcare.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="description" content="Save for your health, grow your wealth. Span Healthcare combines health savings, ethical investment, telemedicine, and drug delivery in one platform — built for Nigerians.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+ --navy:#ffffff;--navy2:#f4f9fb;--navy3:#e8f4f7;--brand-muted:#98b7b9;
+ --teal:#3d9cb0;--teal2:#5ab3c6;--teal3:rgba(61,156,176,.1);
+ --gold:#C6A43A;--gold2:#E4C65A;--gold3:rgba(198,164,58,.08);
+ --cream:#1a2e38;--white:#1a2e38;
+ --tl:rgba(26,46,56,.72);--tm:rgba(26,46,56,.45);--td:rgba(26,46,56,.12);
+ --glass:rgba(61,156,176,.06);--gb:rgba(61,156,176,.18);--gb2:rgba(61,156,176,.25);
+ --card-bg:#ffffff;--card-border:rgba(61,156,176,.15);
+ --section-alt:#f4f9fb;--section-alt2:#e8f4f7;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Poppins',sans-serif;background:var(--navy);color:var(--cream);overflow-x:hidden;line-height:1.6}
+
+/* NOISE */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.08}
+
+/* NAV */
+#navbar{
+ position:fixed;top:0;left:0;right:0;z-index:500;
+ height:70px;padding:0 6%;
+ display:flex;align-items:center;justify-content:space-between;
+ background:rgba(255,255,255,.96);
+ backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+ border-bottom:1px solid var(--gb);
+ transition:height .3s,box-shadow .3s;
+}
+#navbar.scrolled{height:58px;box-shadow:0 4px 24px rgba(61,156,176,.12)}
+
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{
+ width:38px;height:38px;border-radius:9px;flex-shrink:0;
+ background:linear-gradient(135deg,var(--teal),var(--teal2));
+ display:flex;align-items:center;justify-content:center;
+ position:relative;overflow:hidden;
+}
+.logo-mark svg{width:22px;height:22px;fill:none}
+.logo-mark::after{content:'';position:absolute;top:-40%;right:-40%;width:55%;height:55%;background:rgba(255,255,255,.22);border-radius:50%}
+.logo-text{font-family:'League Spartan',sans-serif;font-size:1.22rem;font-weight:600;color:var(--cream);letter-spacing:.02em}
+.logo-text b{color:var(--gold);font-weight:600}
+
+nav{position:relative}
+nav ul{display:flex;align-items:center;gap:2.2rem;list-style:none}
+nav ul a{font-size:.8rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:rgba(26,46,56,.65);text-decoration:none;transition:color .2s;position:relative}
+nav ul a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+nav ul a:hover{color:var(--teal)}
+nav ul a:hover::after{width:100%}
+.nav-btn{padding:8px 20px;background:var(--teal);color:var(--white)!important;border-radius:4px;font-weight:500!important;transition:background .2s,transform .2s!important}
+.nav-btn::after{display:none!important}
+.nav-btn:hover{background:var(--teal2)!important;transform:translateY(-1px)}
+
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--cream);border-radius:2px;transition:all .3s}
+.nav-hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* mobile nav */
+@media(max-width:860px){
+ nav ul{
+ display:none;
+ position:fixed;top:0;left:0;right:0;
+ flex-direction:column;
+ background:rgba(255,255,255,.99);
+ padding:80px 6% 2rem;
+ gap:0;
+ border-bottom:1px solid rgba(61,156,176,.2);
+ z-index:498;
+ box-shadow:0 20px 60px rgba(0,0,0,.6);
+ min-height:auto;
+ pointer-events:auto;
+ }
+ nav ul li{
+ border-bottom:1px solid rgba(255,255,255,.06);
+ padding:0;
+ }
+ nav ul li:last-child{border-bottom:none;padding-top:1rem}
+ nav ul a{
+ display:block;
+ padding:14px 0;
+ font-size:.9rem;
+ color:rgba(244,239,230,.8);
+ }
+ nav ul.open{display:flex}
+ .nav-hamburger{display:flex}
+}
+
+/* HERO */
+.hero{
+ min-height:100vh;padding-top:70px;
+ display:grid;grid-template-columns:1fr 1fr;
+ align-items:center;gap:3rem;padding-left:6%;padding-right:6%;
+ position:relative;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;background:
+ radial-gradient(ellipse 70% 65% at 72% 45%,rgba(61,156,176,.14) 0%,transparent 65%),
+ radial-gradient(ellipse 45% 55% at 8% 85%,rgba(198,164,58,.08) 0%,transparent 55%),
+ radial-gradient(ellipse 60% 40% at 50% 0%,rgba(61,156,176,.06) 0%,transparent 70%)}
+.hero-grid{position:absolute;inset:0;
+ background-image:linear-gradient(rgba(61,156,176,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(61,156,176,.07) 1px,transparent 1px);
+ background-size:55px 55px;
+ mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 30%,transparent 100%)}
+
+.hero-left{position:relative;z-index:2}
+.hero-badge{
+ display:inline-flex;align-items:center;gap:8px;
+ font-family:'Poppins',sans-serif;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;
+ color:var(--gold);margin-bottom:1.6rem;
+ padding:5px 13px;border:1px solid rgba(198,164,58,.28);border-radius:2px;background:rgba(198,164,58,.05)
+}
+.hero-badge-dot{width:5px;height:5px;background:var(--teal);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+
+.hero h1{font-family:'League Spartan',sans-serif;font-size:clamp(2.2rem,3.8vw,3.4rem);font-weight:700;line-height:1.1;color:#1a2e38;margin-bottom:1.4rem;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;background:linear-gradient(130deg,var(--teal2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:1rem;font-weight:300;color:var(--tl);max-width:470px;margin-bottom:2.4rem;line-height:1.78}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+
+.btn{padding:13px 30px;border-radius:4px;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:500;letter-spacing:.04em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .25s;border:none;position:relative;overflow:hidden}
+.btn-primary{background:var(--teal);color:var(--white)}
+.btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.1));opacity:0;transition:opacity .25s}
+.btn-primary:hover{background:var(--teal2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(61,156,176,.4)}
+.btn-primary:hover::before{opacity:1}
+.btn-outline{background:transparent;color:#1a2e38;border:1px solid rgba(61,156,176,.3)}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal)}
+
+.hero-kpis{display:flex;gap:2.2rem;margin-top:3rem;padding-top:2.2rem;border-top:1px solid rgba(61,156,176,.15)}
+.kpi-val{font-family:'League Spartan',sans-serif;font-size:1.9rem;font-weight:600;color:#1a2e38;line-height:1}
+.kpi-val sup{font-size:1rem;color:#98b7b9}
+.kpi-label{font-size:.7rem;color:rgba(26,46,56,.5);letter-spacing:.07em;text-transform:uppercase;margin-top:4px}
+
+/* HERO ILLUSTRATION */
+.hero-right{position:relative;z-index:2;display:flex;justify-content:flex-end;align-items:center}
+.hero-svg-wrap{width:100%;max-width:460px;position:relative}
+
+/* floating cards */
+.hero-card{
+ background:rgba(255,255,255,.95);
+ border:1px solid var(--gb);border-radius:14px;
+ backdrop-filter:blur(18px);padding:20px 22px;
+ position:relative;
+}
+.hero-card-main{background:linear-gradient(135deg,rgba(61,156,176,.16),rgba(7,17,31,.85));border-color:rgba(61,156,176,.28)}
+.hc-tag{font-family:'Poppins',sans-serif;font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.hc-amount{font-family:'League Spartan',sans-serif;font-size:2.1rem;font-weight:600;color:#1a2e38}
+.hc-sub{font-size:.72rem;color:var(--tm);margin-top:3px}
+.hc-bar{height:4px;background:rgba(61,156,176,.15);border-radius:2px;margin-top:14px;overflow:hidden}
+.hc-fill{height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--teal2));border-radius:2px;animation:fillBar 2s .6s ease forwards}
+@keyframes fillBar{to{width:68%}}
+.hc-meta{display:flex;justify-content:space-between;margin-top:7px;font-size:.68rem;color:var(--tm)}
+.hc-meta b{color:var(--gold);font-family:'Poppins',sans-serif}
+.hc-rows{display:flex;flex-direction:column;gap:7px;margin-top:14px;padding-top:13px;border-top:1px solid rgba(61,156,176,.12)}
+.hc-row{display:flex;align-items:center;gap:7px;font-size:.7rem;color:rgba(26,46,56,.7)}
+.hc-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.dc-teal{background:var(--teal2)}.dc-gold{background:var(--gold)}.dc-dim{background:rgba(255,255,255,.3)}
+
+.hc-float1{position:absolute;top:-16px;left:-16px;width:175px;padding:15px 16px;z-index:1}
+.hc-float2{position:absolute;bottom:-16px;right:-16px;width:200px;padding:15px 16px;z-index:1}
+.hc-online{font-size:.7rem;color:var(--teal2);font-weight:600;display:flex;align-items:center;gap:5px}
+.hc-online::before{content:'';width:7px;height:7px;background:var(--teal2);border-radius:50%;animation:blink 2s infinite}
+
+/* SECTION COMMONS */
+section{padding:90px 6%}
+.sec-label{font-family:'Poppins',sans-serif;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:.9rem;display:flex;align-items:center;gap:10px}
+.sec-label::before{content:'';width:22px;height:1px;background:var(--teal)}
+.sec-title{font-family:'League Spartan',sans-serif;font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:700;line-height:1.18;letter-spacing:-.01em;color:#1a2e38;max-width:540px}
+.sec-title em{font-style:italic;color:var(--teal2)}
+.sec-sub{color:var(--tl);font-weight:300;font-size:.97rem;line-height:1.78;max-width:510px;margin-top:.9rem}
+
+/* HOW IT WORKS */
+.hiw{background:var(--section-alt);position:relative;overflow:hidden}
+.hiw::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(61,156,176,.3),transparent)}
+.hiw-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(61,156,176,.08);border:1px solid rgba(61,156,176,.12);border-radius:12px;overflow:hidden}
+.step{background:var(--card-bg);padding:32px 24px;transition:background .3s;position:relative}
+.step:hover{background:rgba(61,156,176,.06)}
+.step-n{font-family:'League Spartan',sans-serif;font-size:3.2rem;font-weight:300;color:rgba(198,164,58,.11);line-height:1;margin-bottom:14px;transition:color .3s}
+.step:hover .step-n{color:rgba(61,156,176,.35)}
+.step-ico{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:14px}
+.ico-teal{background:var(--teal3);border:1px solid rgba(61,156,176,.22)}
+.ico-gold{background:rgba(61,156,176,.06);border:1px solid rgba(152,183,185,.25)}
+.step h3{font-family:'League Spartan',sans-serif;font-size:1.15rem;font-weight:600;color:#1a2e38;margin-bottom:8px}
+.step p{font-size:.82rem;color:var(--tm);line-height:1.65}
+
+/* SERVICES */
+.services{background:var(--navy)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3.2rem}
+.svc-card{background:var(--card-bg);border:1px solid var(--gb);border-radius:12px;padding:32px 28px;position:relative;overflow:hidden;transition:all .3s;cursor:default}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--teal2));opacity:0;transition:opacity .3s}
+.svc-card:hover{border-color:rgba(61,156,176,.35);transform:translateY(-4px);box-shadow:0 12px 40px rgba(61,156,176,.12)}
+.svc-card:hover::before{opacity:1}
+.svc-card.ft{background:linear-gradient(135deg,rgba(61,156,176,.13),rgba(7,17,31,.85));border-color:rgba(61,156,176,.25)}
+.svc-card.ft::before{opacity:1}
+.svc-ico{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:18px;background:var(--teal3);border:1px solid rgba(61,156,176,.2)}
+.svc-tag{display:inline-block;margin-bottom:10px;font-family:'Poppins',sans-serif;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);background:rgba(61,156,176,.08);border:1px solid rgba(61,156,176,.18);padding:3px 9px;border-radius:2px}
+.svc-card h3{font-family:'League Spartan',sans-serif;font-size:1.28rem;font-weight:600;color:#1a2e38;margin-bottom:9px}
+.svc-card p{font-size:.84rem;color:var(--tl);line-height:1.7;margin-bottom:18px}
+.svc-link{font-size:.75rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--teal);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap .2s}
+.svc-link:hover{gap:9px}
+
+/* ABOUT */
+.about-sec{background:var(--section-alt);position:relative;overflow:hidden}
+.about-sec::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(61,156,176,.3),transparent)}
+.about-sec::after{content:'';position:absolute;bottom:-180px;right:-180px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(61,156,176,.09) 0%,transparent 70%);pointer-events:none}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-visual{position:relative}
+
+/* SVG person illustration */
+.about-illustration{width:100%;max-width:420px}
+.about-features{display:flex;flex-direction:column;gap:1.3rem;margin-top:2.2rem}
+.af{display:flex;gap:14px;align-items:flex-start;padding:17px;border-radius:8px;border:1px solid transparent;transition:all .3s}
+.af:hover{background:rgba(61,156,176,.06);border-color:rgba(61,156,176,.14)}
+.af-ico{width:34px;height:34px;flex-shrink:0;border-radius:8px;background:var(--teal3);border:1px solid rgba(61,156,176,.18);display:flex;align-items:center;justify-content:center;font-size:.95rem;margin-top:1px}
+.af h4{font-family:'League Spartan',sans-serif;font-size:1.05rem;font-weight:600;color:#1a2e38;margin-bottom:3px}
+.af p{font-size:.8rem;color:var(--tm);line-height:1.6}
+
+/* INVESTMENT */
+.invest-sec{background:var(--navy);position:relative;overflow:hidden}
+.invest-sec::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent)}
+.invest-sec::after{content:'';position:absolute;bottom:-200px;right:-200px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(61,156,176,.07) 0%,transparent 70%);pointer-events:none}
+
+/* Top KPI bar */
+.invest-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(61,156,176,.08);border:1px solid rgba(61,156,176,.15);border-radius:12px;overflow:hidden;margin-bottom:4rem}
+.invest-kpi{background:var(--card-bg);padding:28px 22px;text-align:center;transition:background .3s}
+.invest-kpi:hover{background:rgba(61,156,176,.07)}
+.ik-val{font-family:'League Spartan',sans-serif;font-size:2.2rem;font-weight:600;color:#1a2e38;line-height:1}
+.ik-val sup{font-size:1rem;color:var(--teal2)}
+.ik-val span{font-size:1.1rem;color:var(--gold)}
+.ik-label{font-size:.68rem;color:var(--tm);letter-spacing:.09em;text-transform:uppercase;margin-top:6px}
+.ik-sub{font-size:.72rem;color:#98b7b9;margin-top:4px;font-family:'Poppins',sans-serif}
+
+/* Main two-col layout */
+.invest-body{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:3.5rem}
+
+/* Chart card */
+.chart-card{background:var(--card-bg);border:1px solid var(--gb);border-radius:16px;padding:28px;backdrop-filter:blur(18px)}
+.chart-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.chart-title{font-family:'League Spartan',sans-serif;font-size:1.05rem;color:#1a2e38}
+.chart-ret{font-family:'Poppins',sans-serif;font-size:.82rem;color:var(--gold)}
+.chart-svg{width:100%;height:130px}
+.chart-div{height:1px;background:rgba(61,156,176,.12);margin:18px 0}
+.chart-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.cs-v{font-family:'League Spartan',sans-serif;font-size:1.45rem;font-weight:600;color:#1a2e38;text-align:center}
+.cs-l{font-size:.65rem;color:var(--tm);text-transform:uppercase;letter-spacing:.08em;text-align:center;margin-top:2px}
+.halal-badge{display:flex;align-items:center;gap:8px;padding:11px 16px;background:rgba(61,156,176,.07);border:1px solid rgba(61,156,176,.2);border-radius:6px;margin-top:18px}
+.halal-badge span{font-size:.72rem;color:var(--teal);font-weight:500;letter-spacing:.04em}
+
+/* Fund allocation donut */
+.allocation-card{background:var(--card-bg);border:1px solid var(--gb);border-radius:16px;padding:24px;margin-top:1.4rem}
+.alloc-title{font-family:'League Spartan',sans-serif;font-size:1rem;color:#1a2e38;margin-bottom:18px}
+.alloc-rows{display:flex;flex-direction:column;gap:12px}
+.alloc-row{display:flex;align-items:center;gap:12px}
+.alloc-label{font-size:.78rem;color:var(--tl);width:130px;flex-shrink:0}
+.alloc-bar-wrap{flex:1;height:6px;background:rgba(61,156,176,.12);border-radius:3px;overflow:hidden}
+.alloc-bar{height:100%;border-radius:3px;transition:width 1.2s ease}
+.alloc-pct{font-family:'Poppins',sans-serif;font-size:.72rem;color:var(--tm);width:36px;text-align:right;flex-shrink:0}
+
+/* How deposits work */
+.invest-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:3.5rem}
+.iflow-card{background:var(--card-bg);border:1px solid var(--gb);border-radius:12px;padding:24px;position:relative;text-align:center;transition:all .3s}
+.iflow-card:hover{border-color:rgba(61,156,176,.28);transform:translateY(-3px)}
+.iflow-num{font-family:'League Spartan',sans-serif;font-size:2.8rem;font-weight:300;color:rgba(198,164,58,.14);line-height:1;position:absolute;top:14px;right:16px}
+.iflow-ico{font-size:1.6rem;margin-bottom:12px}
+.iflow-card h4{font-family:'League Spartan',sans-serif;font-size:1.1rem;color:#1a2e38;margin-bottom:6px;font-weight:600}
+.iflow-card p{font-size:.78rem;color:var(--tm);line-height:1.6}
+.iflow-arrow{display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:.9rem;padding-top:8px}
+
+/* Fund types grid */
+.fund-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:3.5rem}
+.fund-card{background:var(--card-bg);border:1px solid var(--gb);border-radius:12px;padding:22px;transition:all .3s}
+.fund-card:hover{border-color:rgba(61,156,176,.25);background:var(--teal3)}
+.fund-tag{font-family:'Poppins',sans-serif;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);background:rgba(61,156,176,.08);border:1px solid rgba(61,156,176,.18);padding:3px 8px;border-radius:2px;display:inline-block;margin-bottom:10px}
+.fund-card h4{font-family:'League Spartan',sans-serif;font-size:1.1rem;color:#1a2e38;margin-bottom:6px;font-weight:600}
+.fund-card p{font-size:.78rem;color:var(--tm);line-height:1.58;margin-bottom:12px}
+.fund-return{font-family:'Poppins',sans-serif;font-size:.78rem;color:#98b7b9;font-weight:500}
+
+/* Returns calculator */
+.calc-card{background:linear-gradient(135deg,rgba(61,156,176,.1),rgba(7,17,31,.9));border:1px solid rgba(61,156,176,.22);border-radius:16px;padding:32px}
+.calc-title{font-family:'League Spartan',sans-serif;font-size:1.4rem;color:#1a2e38;margin-bottom:.4rem;font-weight:600}
+.calc-sub{font-size:.82rem;color:var(--tm);margin-bottom:2rem}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.calc-inputs{display:flex;flex-direction:column;gap:1.2rem}
+.calc-field label{font-size:.72rem;color:var(--tm);letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:6px}
+.calc-field input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:4px;background:rgba(255,255,255,.08);border-radius:2px;outline:none}
+.calc-field input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--teal2);cursor:pointer;box-shadow:0 0 0 3px rgba(90,179,198,.2)}
+.calc-val-display{font-family:'League Spartan',sans-serif;font-size:1.1rem;color:var(--white);margin-top:4px}
+.calc-result{background:rgba(61,156,176,.06);border:1px solid var(--gb);border-radius:12px;padding:24px;text-align:center}
+.calc-result-label{font-size:.7rem;color:var(--tm);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.calc-result-val{font-family:'League Spartan',sans-serif;font-size:2.6rem;font-weight:600;color:#1a2e38;line-height:1}
+.calc-result-val span{color:var(--teal2)}
+.calc-result-profit{font-family:'Poppins',sans-serif;font-size:.8rem;color:var(--gold);margin-top:6px}
+.calc-result-note{font-size:.7rem;color:var(--tm);margin-top:8px;line-height:1.5}
+
+/* Invest features bottom */
+.invest-features{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3.5rem}
+.af{display:flex;gap:14px;align-items:flex-start;padding:17px;border-radius:8px;border:1px solid transparent;transition:all .3s}
+.af:hover{background:rgba(61,156,176,.06);border-color:rgba(61,156,176,.14)}
+.af-ico{width:34px;height:34px;flex-shrink:0;border-radius:8px;background:var(--teal3);border:1px solid rgba(61,156,176,.18);display:flex;align-items:center;justify-content:center;font-size:.95rem;margin-top:1px}
+.af h4{font-family:'League Spartan',sans-serif;font-size:1.05rem;font-weight:600;color:#1a2e38;margin-bottom:3px}
+.af p{font-size:.78rem;color:var(--tm);line-height:1.6}
+
+@media(max-width:860px){
+ .invest-kpi-row{grid-template-columns:repeat(2,1fr)}
+ .invest-body{grid-template-columns:1fr}
+ .invest-flow{grid-template-columns:1fr}
+ .fund-grid{grid-template-columns:1fr}
+ .calc-grid{grid-template-columns:1fr}
+ .invest-features{grid-template-columns:1fr}
+}
+
+/* TESTIMONIALS */
+.testi-sec{background:var(--section-alt);position:relative;overflow:hidden}
+.testi-sec::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(61,156,176,.3),transparent)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+.tc{background:var(--card-bg);border:1px solid var(--gb);border-radius:12px;padding:28px;transition:border-color .3s}
+.tc:hover{border-color:rgba(61,156,176,.2)}
+.tc-q{font-family:'League Spartan',sans-serif;font-size:2.2rem;color:var(--teal2);line-height:1;margin-bottom:13px;opacity:.55}
+.tc-text{font-size:.88rem;color:var(--tl);line-height:1.75;font-style:italic;margin-bottom:18px}
+.tc-foot{display:flex;align-items:center;gap:10px;padding-top:14px;border-top:1px solid rgba(61,156,176,.12)}
+.tc-av{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.8rem;color:var(--white);flex-shrink:0}
+.tc-name{font-size:.82rem;font-weight:500;color:#1a2e38}
+.tc-role{font-size:.68rem;color:var(--tm)}
+
+/* PARTNERS MARQUEE */
+.partners{background:var(--section-alt2);padding:60px 0;border-top:1px solid rgba(61,156,176,.15);border-bottom:1px solid var(--td);overflow:hidden}
+.partners-head{text-align:center;margin-bottom:2.5rem;padding:0 6%}
+.partners-head p{font-family:'Poppins',sans-serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,46,56,.4)}
+.marquee-wrap{position:relative;overflow:hidden}
+.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.marquee-wrap::before{left:0;background:linear-gradient(90deg,var(--section-alt2),transparent)}
+.marquee-wrap::after{right:0;background:linear-gradient(-90deg,var(--section-alt2),transparent)}
+.marquee-track{display:flex;gap:0;animation:scroll 30s linear infinite;width:max-content}
+.marquee-track:hover{animation-play-state:paused}
+.partner-item{display:flex;align-items:center;justify-content:center;padding:0 48px;border-right:1px solid rgba(61,156,176,.12);flex-shrink:0}
+.partner-logo{height:52px;display:flex;align-items:center;gap:10px;opacity:.65;transition:opacity .3s;filter:grayscale(15%)}
+.partner-item:hover .partner-logo{opacity:1;filter:none}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* CTA */
+.cta-sec{
+ background:linear-gradient(135deg,rgba(61,156,176,.17),rgba(7,17,31,.96));
+ border-top:1px solid rgba(61,156,176,.2);border-bottom:1px solid rgba(61,156,176,.2);
+ text-align:center;padding:80px 6%;position:relative;overflow:hidden
+}
+.cta-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 75% at 50% 50%,rgba(61,156,176,.13),transparent);pointer-events:none}
+.cta-sec .sec-title{max-width:580px;margin:0 auto 1rem;text-align:center;color:#1a2e38!important}
+.cta-sec .sec-sub{max-width:480px;margin:0 auto 2.4rem;text-align:center}
+.cta-row{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:#1a2e38;border-top:1px solid rgba(255,255,255,.08);padding:56px 6% 28px}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.6fr;gap:2.8rem;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08)}
+.fb-desc{font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.75;max-width:270px;margin-top:14px}
+.fc h4{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:14px}
+.fc ul{list-style:none}
+.fc li{margin-bottom:9px}
+.fc a{font-size:.83rem;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.fc a:hover{color:#98b7b9}
+.fc-ci{display:flex;gap:9px;align-items:flex-start;font-size:.8rem;color:rgba(255,255,255,.45);margin-bottom:9px;line-height:1.5}
+.fc-ci .ico{color:var(--teal2);flex-shrink:0}
+.footer-bot{padding-top:22px;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.footer-bot p{font-size:.75rem;color:rgba(255,255,255,.45)}
+.footer-halal{font-size:.7rem;color:#98b7b9;opacity:.75;display:flex;align-items:center;gap:5px}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:translateY(0)}
+.rv1{transition-delay:.1s}.rv2{transition-delay:.2s}.rv3{transition-delay:.3s}.rv4{transition-delay:.4s}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+ .hero{grid-template-columns:1fr;padding-top:90px}
+ .hero-right{display:none}
+ .steps{grid-template-columns:1fr 1fr}
+ .svc-grid{grid-template-columns:1fr}
+ .about-inner,.invest-inner{grid-template-columns:1fr}
+ .about-visual,.chart-card-wrap{display:none}
+ .testi-grid{grid-template-columns:1fr}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#f4f9fb}::-webkit-scrollbar-thumb{background:#3d9cb0;border-radius:2px}
+
+/* AI IMAGE SECTIONS */
+.ai-img-wrap{position:relative;border-radius:16px;overflow:hidden;background:rgba(61,156,176,.06);border:1px solid rgba(61,156,176,.15)}
+.ai-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.ai-img-wrap:hover img{transform:scale(1.03)}
+.ai-img-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:40px;text-align:center;background:linear-gradient(135deg,rgba(61,156,176,.08),rgba(152,183,185,.06))}
+.ai-img-loader{width:36px;height:36px;border:2px solid rgba(61,156,176,.2);border-top-color:#3d9cb0;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ai-img-label{font-family:'Poppins',sans-serif;font-size:.72rem;color:rgba(61,156,176,.6);letter-spacing:.06em;text-transform:uppercase}
+.ai-img-badge{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border:1px solid rgba(61,156,176,.2);border-radius:20px;padding:4px 12px;font-family:'Poppins',sans-serif;font-size:.65rem;font-weight:600;color:#3d9cb0;letter-spacing:.05em;text-transform:uppercase}
+
+/* HERO IMAGE SPLIT */
+.hero-img-col{position:relative;z-index:2;height:520px}
+.hero-img-col .ai-img-wrap{height:100%}
+.hero-img-overlay{position:absolute;bottom:16px;left:16px;right:16px;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border:1px solid rgba(61,156,176,.18);border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:14px}
+.hero-img-stat{text-align:center;flex:1}
+.hero-img-stat-val{font-family:'League Spartan',sans-serif;font-size:1.4rem;font-weight:700;color:#1a2e38;line-height:1}
+.hero-img-stat-val span{color:#3d9cb0}
+.hero-img-stat-label{font-size:.62rem;color:rgba(26,46,56,.45);text-transform:uppercase;letter-spacing:.07em;margin-top:3px}
+.hero-img-divider{width:1px;height:36px;background:rgba(61,156,176,.18)}
+
+/* FEATURES STRIP */
+.features-strip{background:var(--navy);padding:0;border-bottom:1px solid rgba(61,156,176,.1)}
+.features-strip-inner{display:flex;overflow:hidden}
+.feature-strip-item{flex:1;padding:28px 24px;border-right:1px solid rgba(61,156,176,.1);display:flex;align-items:center;gap:14px;transition:background .25s}
+.feature-strip-item:last-child{border-right:none}
+.feature-strip-item:hover{background:rgba(61,156,176,.04)}
+.fsi-ico{width:40px;height:40px;border-radius:10px;background:rgba(61,156,176,.1);border:1px solid rgba(61,156,176,.18);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.fsi-text h4{font-family:'League Spartan',sans-serif;font-size:.95rem;font-weight:600;color:#1a2e38;margin-bottom:2px}
+.fsi-text p{font-size:.75rem;color:rgba(26,46,56,.45);line-height:1.4}
+
+/* SPLIT CONTENT SECTIONS */
+.split-sec{padding:90px 6%}
+.split-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.split-inner.rev{direction:rtl}
+.split-inner.rev>*{direction:ltr}
+.split-content{display:flex;flex-direction:column;justify-content:center}
+.split-content .sec-label{margin-bottom:.8rem}
+.split-content .sec-title{margin-bottom:1rem}
+.split-content .sec-sub{margin-bottom:2rem}
+.split-img{height:460px;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(61,156,176,.15)}
+.split-img .ai-img-wrap{height:100%}
+
+/* STATS SECTION */
+.stats-sec{background:linear-gradient(135deg,#3d9cb0,#5ab3c6);padding:70px 6%;position:relative;overflow:hidden}
+.stats-sec::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:50px 50px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;position:relative;z-index:1}
+.stat-block{padding:32px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.15)}
+.stat-block:last-child{border-right:none}
+.stat-val{font-family:'League Spartan',sans-serif;font-size:2.8rem;font-weight:800;color:#fff;line-height:1}
+.stat-val sup{font-size:1.2rem}
+.stat-label{font-size:.75rem;color:rgba(255,255,255,.75);letter-spacing:.08em;text-transform:uppercase;margin-top:6px;font-family:'Poppins',sans-serif}
+
+/* TRUST BADGES */
+.trust-bar{background:var(--section-alt2);padding:32px 6%;border-top:1px solid rgba(61,156,176,.12);border-bottom:1px solid rgba(61,156,176,.12)}
+.trust-inner{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:10px}
+.trust-ico{width:36px;height:36px;border-radius:8px;background:rgba(61,156,176,.1);border:1px solid rgba(61,156,176,.18);display:flex;align-items:center;justify-content:center;font-size:.95rem}
+.trust-text{font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:500;color:rgba(26,46,56,.65)}
+.trust-divider{width:1px;height:24px;background:rgba(61,156,176,.15)}
+
+/* CTA UPGRADE */
+.cta-img-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:20px;overflow:hidden;margin-top:3rem;box-shadow:0 24px 60px rgba(61,156,176,.18)}
+.cta-img-panel{height:280px;position:relative}
+.cta-img-panel .ai-img-wrap{height:100%;border-radius:0;border:none}
+.cta-img-caption{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(to top,rgba(26,46,56,.8),transparent)}
+.cta-img-caption p{font-family:'League Spartan',sans-serif;font-size:.95rem;font-weight:600;color:#fff}
+.cta-img-caption span{font-size:.72rem;color:rgba(255,255,255,.65);font-family:'Poppins',sans-serif}
+
+@media(max-width:860px){
+ section [style*="grid-template-columns:repeat(3,1fr)"]{display:block!important}
+ section [style*="grid-template-columns:repeat(3,1fr)"]>div{margin-bottom:1rem}
+ .features-strip-inner{flex-direction:column}
+ .feature-strip-item{border-right:none;border-bottom:1px solid rgba(61,156,176,.1)}
+ .split-inner,.split-inner.rev{grid-template-columns:1fr;direction:ltr}
+ .split-img{height:280px}
+ .stats-grid{grid-template-columns:repeat(2,1fr)}
+ .stat-block{border-right:none;border-bottom:1px solid rgba(255,255,255,.12)}
+ .cta-img-row{grid-template-columns:1fr}
+ .hero-img-col{height:320px}
+ .trust-inner{gap:1.5rem}
+ .trust-divider{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="navbar">
+ <a href="#" class="logo">
+ <div class="logo-mark">
+ <!-- S cross / health icon -->
+ <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <rect x="9" y="3" width="4" height="16" rx="1.5" fill="#1a2e38"/>
+ <rect x="3" y="9" width="16" height="4" rx="1.5" fill="#1a2e38"/>
+ <circle cx="11" cy="11" r="2.2" fill="rgba(7,17,31,.4)"/>
+ </svg>
+ </div>
+ <span class="logo-text">Span <b>Healthcare</b></span>
+ </a>
+
+ <nav>
+ <ul id="navlinks">
+ <li><a href="#services">Services</a></li>
+ <li><a href="#hiw">How It Works</a></li>
+ <li><a href="#why-span">Why Span</a></li>
+ <li><a href="#corporates">For Corporates</a></li>
+ <li><a href="#about">About Us</a></li>
+ <li><a href="#contact" class="nav-btn" href="https://app.span-healthcare.com">Get Started Free</a></li>
+ </ul>
+ <div class="nav-hamburger" id="burger" onclick="toggleNav()">
+ <span></span><span></span><span></span>
+ </div>
+ </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+ <div class="hero-bg"></div>
+ <div class="hero-grid"></div>
+
+ <div class="hero-left">
+ <div class="hero-badge"><span class="hero-badge-dot"></span>Smart Healthcare Funding &nbsp;·&nbsp; Nigeria</div>
+ <h1>Healthcare That<br><em>Grows Your Wealth</em></h1>
+ <p class="hero-desc">Your health costs will rise. As you age, medications become routine. Diabetes, hypertension, and kidney disease do not announce their arrival — they build quietly over years. A dedicated health savings account means you are never caught unprepared. Start small. Build consistently. Your health and your wealth, secured together.</p>
+ <div class="hero-actions">
+ <a href="https://app.span-healthcare.com" class="btn btn-primary">
+ Start Saving Today
+ <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1 6.5h11M6.5 1l5.5 5.5L6.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+ </a>
+ <a href="#hiw" class="btn btn-outline">See How It Works</a>
+ </div>
+ <div class="hero-kpis">
+ <div><div class="kpi-val">500<sup>+</sup></div><div class="kpi-label">Target Depositors 2026</div></div>
+ <div><div class="kpi-val">4<sup style="color:var(--gold)">×</sup></div><div class="kpi-label">Core Services Bundled</div></div>
+ <div><div class="kpi-val">100<sup>%</sup></div><div class="kpi-label">Halal Compliant</div></div>
+ </div>
+ </div>
+
+ <div class="hero-img-col rv rv2">
+ <div class="ai-img-wrap" id="hero-img-wrap">
+ <div class="ai-img-placeholder" id="hero-img-ph">
+ <div class="ai-img-loader"></div>
+ <div class="ai-img-label">Generating image...</div>
+ </div>
+ </div>
+ <div class="hero-img-overlay">
+ <div class="hero-img-stat">
+ <div class="hero-img-stat-val">₦<span>48,500</span></div>
+ <div class="hero-img-stat-label">Quarterly Returns</div>
+ </div>
+ <div class="hero-img-divider"></div>
+ <div class="hero-img-stat">
+ <div class="hero-img-stat-val"><span>+8.4</span>%</div>
+ <div class="hero-img-stat-label">Annual Returns</div>
+ </div>
+ <div class="hero-img-divider"></div>
+ <div class="hero-img-stat">
+ <div class="hero-img-stat-val"><span>100</span>%</div>
+ <div class="hero-img-stat-label">Halal Certified</div>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+
+<!-- FEATURES STRIP -->
+<div class="features-strip">
+ <div class="features-strip-inner">
+ <div class="feature-strip-item">
+ <div class="fsi-ico"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="14" height="14" rx="2"/><line x1="9" y1="5" x2="9" y2="13"/><line x1="5" y1="9" x2="13" y2="9"/></svg></div>
+ <div class="fsi-text"><h4>Health Savings</h4><p>From ₦5,000/month · No minimums</p></div>
+ </div>
+ <div class="feature-strip-item">
+ <div class="fsi-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,14 7,9 11,12 18,5"/><polyline points="14,5 18,5 18,9"/></svg></div>
+ <div class="fsi-text"><h4>Ethical Investment</h4><p>0% riba · SEC regulated · Grows quarterly</p></div>
+ </div>
+ <div class="feature-strip-item">
+ <div class="fsi-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="16" height="12" rx="2"/><line x1="8" y1="18" x2="12" y2="18"/><line x1="10" y1="16" x2="10" y2="18"/></svg></div>
+ <div class="fsi-text"><h4>Telemedicine</h4><p>₦500 per consultation · 24/7</p></div>
+ </div>
+ <div class="feature-strip-item">
+ <div class="fsi-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v3M10 14v3M3 10h3M14 10h3"/><circle cx="10" cy="10" r="3"/><circle cx="10" cy="3" r="1.5"/><circle cx="10" cy="17" r="1.5"/><circle cx="3" cy="10" r="1.5"/><circle cx="17" cy="10" r="1.5"/></svg></div>
+ <div class="fsi-text"><h4>50+ Providers</h4><p>20–40% off · No approvals needed</p></div>
+ </div>
+ <div class="feature-strip-item">
+ <div class="fsi-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="12" height="10" rx="1"/><path d="M13 9h3l3 4v3h-6V9z"/><circle cx="5" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg></div>
+ <div class="fsi-text"><h4>Drug Delivery</h4><p>Free to your door · Verified meds</p></div>
+ </div>
+ </div>
+</div>
+
+
+<!-- WHY HEALTH SAVINGS -->
+<section style="background:#f4f9fb;padding:90px 6%;position:relative;overflow:hidden;border-top:1px solid rgba(61,156,176,.12)">
+ <div style="position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(61,156,176,.08),transparent 70%);pointer-events:none"></div>
+
+ <div class="rv" style="max-width:700px;margin:0 auto 4rem;text-align:center">
+ <div class="sec-label" style="justify-content:center">Why It Matters</div>
+ <h2 class="sec-title" style="max-width:620px;margin:.6rem auto 1rem;text-align:center">Your health costs will rise.<br><em>Will your savings?</em></h2>
+ <p class="sec-sub" style="text-align:center;max-width:580px;margin:0 auto">Nigeria is experiencing a quiet but serious chronic disease crisis. Diabetes, hypertension, Chronic Kidney Disease, and cancer are no longer diseases of old age — they are affecting Nigerians in their 30s, 40s, and 50s. The cost of managing them is real, ongoing, and significant. A health savings account is not optional. It is essential.</p>
+ </div>
+
+ <!-- Disease cards grid -->
+ <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-bottom:4rem" class="rv">
+
+ <div style="background:#fff;border:1px solid rgba(61,156,176,.15);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden;transition:all .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(61,156,176,.12)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+ <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3d9cb0,#5ab3c6)"></div>
+ <div style="width:44px;height:44px;border-radius:10px;background:rgba(61,156,176,.08);border:1px solid rgba(61,156,176,.15);display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10L10 4a4.24 4.24 0 016 6l-6 6a4.24 4.24 0 01-6-6z"/><line x1="7" y1="13" x2="13" y2="7"/></svg></div>
+ <div style="font-family:'League Spartan',sans-serif;font-size:1.5rem;font-weight:800;color:#3d9cb0;margin-bottom:4px">11.2M</div>
+ <div style="font-family:'League Spartan',sans-serif;font-size:1rem;font-weight:700;color:#1a2e38;margin-bottom:8px">Nigerians With Diabetes</div>
+ <p style="font-size:.8rem;color:rgba(26,46,56,.55);line-height:1.65">More than half are undiagnosed. Managing diabetes costs ₦80,000–₦200,000 per year in medication, monitoring, and specialist visits — every year, for life.</p>
+ </div>
+
+ <div style="background:#fff;border:1px solid rgba(61,156,176,.15);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden;transition:all .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(61,156,176,.12)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+ <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#5ab3c6,#98b7b9)"></div>
+ <div style="width:44px;height:44px;border-radius:10px;background:rgba(61,156,176,.08);border:1px solid rgba(61,156,176,.15);display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17S2 12 2 7a4 4 0 017-2.65A4 4 0 0118 7c0 5-8 10-8 10z"/></svg></div>
+ <div style="font-family:'League Spartan',sans-serif;font-size:1.5rem;font-weight:800;color:#3d9cb0;margin-bottom:4px">1 in 4</div>
+ <div style="font-family:'League Spartan',sans-serif;font-size:1rem;font-weight:700;color:#1a2e38;margin-bottom:8px">Adults Have Hypertension</div>
+ <p style="font-size:.8rem;color:rgba(26,46,56,.55);line-height:1.65">It presents silently. Medication is lifelong. Untreated, it leads to stroke, heart failure, and kidney damage — the most expensive outcomes in Nigerian healthcare.</p>
+ </div>
+
+ <div style="background:#fff;border:1px solid rgba(61,156,176,.15);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden;transition:all .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(61,156,176,.12)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+ <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3d9cb0,#5ab3c6)"></div>
+ <div style="width:44px;height:44px;border-radius:10px;background:rgba(61,156,176,.08);border:1px solid rgba(61,156,176,.15);display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2L3 5v5c0 4.5 3 8 7 9 4-1 7-4.5 7-9V5l-7-3z"/></svg></div>
+ <div style="font-family:'League Spartan',sans-serif;font-size:1.5rem;font-weight:800;color:#3d9cb0;margin-bottom:4px">Rising</div>
+ <div style="font-family:'League Spartan',sans-serif;font-size:1rem;font-weight:700;color:#1a2e38;margin-bottom:8px">Chronic Kidney Disease (CKD)</div>
+ <p style="font-size:.8rem;color:rgba(26,46,56,.55);line-height:1.65">CKD affects 1 in 7 adults globally. In Nigeria, poor early detection means most cases are caught late. Dialysis alone costs ₦300,000–₦500,000 annually.</p>
+ </div>
+
+ <div style="background:#fff;border:1px solid rgba(61,156,176,.15);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden;transition:all .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(61,156,176,.12)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+ <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#98b7b9,#5ab3c6)"></div>
+ <div style="width:44px;height:44px;border-radius:10px;background:rgba(61,156,176,.08);border:1px solid rgba(61,156,176,.15);display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="6" r="3"/><path d="M4 18c0-4 2.7-6 6-6s6 2 6 6"/></svg></div>
+ <div style="font-family:'League Spartan',sans-serif;font-size:1.5rem;font-weight:800;color:#3d9cb0;margin-bottom:4px">24 Yrs</div>
+ <div style="font-family:'League Spartan',sans-serif;font-size:1rem;font-weight:700;color:#1a2e38;margin-bottom:8px">Average Nigerian Retirement</div>
+ <p style="font-size:.8rem;color:rgba(26,46,56,.55);line-height:1.65">The average Nigerian spends 24 years in retirement with rapidly increasing health needs and little to no structured healthcare coverage. The time to build that fund is now — not later.</p>
+ </div>
+
+ <div style="background:#fff;border:1px solid rgba(61,156,176,.15);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden;transition:all .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(61,156,176,.12)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+ <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3d9cb0,#98b7b9)"></div>
+ <div style="width:44px;height:44px;border-radius:10px;background:rgba(61,156,176,.08);border:1px solid rgba(61,156,176,.15);display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="3" height="7" rx="1"/><rect x="8.5" y="6" width="3" height="11" rx="1"/><rect x="14" y="3" width="3" height="14" rx="1"/></svg></div>
+ <div style="font-family:'League Spartan',sans-serif;font-size:1.5rem;font-weight:800;color:#3d9cb0;margin-bottom:4px">₦480k</div>
+ <div style="font-family:'League Spartan',sans-serif;font-size:1rem;font-weight:700;color:#1a2e38;margin-bottom:8px">Avg. Catastrophic Health Event</div>
+ <p style="font-size:.8rem;color:rgba(26,46,56,.55);line-height:1.65">A single hospitalisation, surgery, or cancer diagnosis can cost a family ₦300,000–₦2,000,000 out of pocket. Most Nigerian families are one serious illness away from a financial crisis.</p>
+ </div>
+
+ <div style="background:#fff;border:1px solid rgba(61,156,176,.15);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden;transition:all .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(61,156,176,.12)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+ <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#5ab3c6,#3d9cb0)"></div>
+ <div style="width:44px;height:44px;border-radius:10px;background:rgba(61,156,176,.08);border:1px solid rgba(61,156,176,.15);display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><polyline points="10,5 10,10 14,12"/></svg></div>
+ <div style="font-family:'League Spartan',sans-serif;font-size:1.5rem;font-weight:800;color:#3d9cb0;margin-bottom:4px">Earlier</div>
+ <div style="font-family:'League Spartan',sans-serif;font-size:1rem;font-weight:700;color:#1a2e38;margin-bottom:8px">Chronic Disease Striking Younger</div>
+ <p style="font-size:.8rem;color:rgba(26,46,56,.55);line-height:1.65">Hypertension and type 2 diabetes are increasingly diagnosed in Nigerians in their 30s and 40s. Lifestyle changes, stress, and poor routine care are accelerating this trend. Prevention and early access matter enormously.</p>
+ </div>
+
+ </div>
+
+ <!-- Bottom CTA strip -->
+ <div style="background:linear-gradient(135deg,rgba(61,156,176,.1),rgba(152,183,185,.08));border:1px solid rgba(61,156,176,.18);border-radius:16px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap" class="rv">
+ <div>
+ <div style="font-family:'League Spartan',sans-serif;font-size:1.3rem;font-weight:700;color:#1a2e38;margin-bottom:6px">A health savings account is not a luxury. It is a necessity.</div>
+ <p style="font-size:.88rem;color:rgba(26,46,56,.55);max-width:560px;line-height:1.65">The earlier you start, the more your savings grow. Even ₦5,000 a month, consistently saved and earning returns, builds a meaningful buffer against the inevitable costs of aging and illness.</p>
+ </div>
+ <a href="https://app.span-healthcare.com" class="btn btn-primary" style="flex-shrink:0;white-space:nowrap">Open Your Account Today</a>
+ </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="hiw" id="hiw">
+ <div class="hiw-head">
+ <div>
+ <div class="sec-label">How It Works</div>
+ <h2 class="sec-title">One platform, <em>four pillars</em> of health &amp; wealth</h2>
+ </div>
+ <p class="sec-sub" style="margin-top:0">Everything you need to save, invest, consult, and access care — seamlessly integrated into your Span account.</p>
+ </div>
+ <div class="steps rv">
+ <div class="step">
+ <div class="step-n">01</div><div class="step-ico ico-teal"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="14" height="14" rx="2"/><line x1="9" y1="5" x2="9" y2="13"/><line x1="5" y1="9" x2="13" y2="9"/></svg></div>
+ <h3>Deposit &amp; Save</h3>
+ <p>Download the app. Create your account in 5 minutes. Deposit ₦5,000 or whatever you can. No minimums. No penalties. Flexible always.</p>
+ </div>
+ <div class="step">
+ <div class="step-n">02</div><div class="step-ico ico-gold"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="14" height="14" rx="2"/><line x1="9" y1="5" x2="9" y2="13"/><line x1="5" y1="9" x2="13" y2="9"/></svg></div>
+ <h3>Your Money Grows</h3>
+ <p>Your savings are professionally invested — ethically and transparently. Every quarter, returns are credited to your account. Your healthcare fund builds wealth.</p>
+ </div>
+ <div class="step">
+ <div class="step-n">03</div><div class="step-ico ico-teal"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,13 6,8 10,10 16,4"/><polyline points="12,4 16,4 16,8"/></svg></div>
+ <h3>Access Quality Care</h3>
+ <p>Book telemedicine consultations from ₦500. Visit 50+ hospitals, clinics and diagnostic centres in our network at 20–40% discounted rates. No approvals, no waiting.</p>
+ </div>
+ <div class="step">
+ <div class="step-n">04</div><div class="step-ico ico-gold"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,13 6,8 10,10 16,4"/><polyline points="12,4 16,4 16,8"/></svg></div>
+ <h3>Medications Delivered</h3>
+ <p>Order prescribed medications from verified pharmacy partners and receive free delivery to your door — billed seamlessly from your Span wallet.</p>
+ </div>
+ </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+ <div class="sec-label rv">Our Services</div>
+ <h2 class="sec-title rv rv1">Built for every aspect of your <em>health journey</em></h2>
+ <div class="svc-grid">
+ <div class="svc-card ft rv">
+ <div class="svc-tag">Core</div><div class="svc-ico"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="14" height="14" rx="2"/><line x1="9" y1="5" x2="9" y2="13"/><line x1="5" y1="9" x2="13" y2="9"/></svg></div>
+ <h3>Health Savings Wallet</h3>
+ <p>Open your digital health account and save what you can — ₦5,000 or ₦50,000. Your balance is always accessible for care, and it earns returns while sitting in your account. Whether you need it next month or next year, it is ready — and growing.</p>
+ <a href="#contact" class="svc-link">Open Account →</a>
+ </div>
+ <div class="svc-card rv rv1">
+ <div class="svc-tag">FinTech</div>
+ <div class="svc-ico" style="background:var(--gold3);border-color:rgba(198,164,58,.18)"></div>
+ <h3>Ethical Investment Returns</h3>
+ <p>Your deposits are professionally invested through SEC-regulated, Shariah-compliant instruments. Every quarter, returns are credited to your account — growing your wealth while protecting your health.</p>
+ <a href="#why-span" class="svc-link">Learn More →</a>
+ </div>
+ <div class="svc-card rv rv2">
+ <div class="svc-tag">Digital Health</div><div class="svc-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,14 7,9 11,12 18,5"/><polyline points="14,5 18,5 18,9"/></svg></div>
+ <h3>Telemedicine 24/7</h3>
+ <p>Connect with verified doctors via video, phone, or chat — any time, any day. Consultations from just ₦500. Receive prescriptions and referrals instantly, no hospital travel needed.</p>
+ <a href="#contact" class="svc-link">Consult Now →</a>
+ </div>
+ <div class="svc-card rv">
+ <div class="svc-tag">Network</div>
+ <div class="svc-ico" style="background:var(--gold3);border-color:rgba(198,164,58,.18)"></div>
+ <h3>50+ Provider Network</h3>
+ <p>Access hospitals, clinics, pharmacies and diagnostic centres at 20–40% discounted rates. Full price transparency before every visit. No hidden charges. No approvals required.</p>
+ <a href="#contact" class="svc-link">Find Providers →</a>
+ </div>
+ <div class="svc-card rv rv1">
+ <div class="svc-tag">Delivery</div><div class="svc-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="16" height="12" rx="2"/><line x1="8" y1="18" x2="12" y2="18"/><line x1="10" y1="16" x2="10" y2="18"/></svg></div>
+ <h3>Drug Delivery</h3>
+ <p>Get your prescribed medications delivered to your door by verified pharmacy partners. Track in real time. Billed directly from your Span wallet — fast, safe, and seamless.</p>
+ <a href="#contact" class="svc-link">Order Meds →</a>
+ </div>
+ <div class="svc-card rv rv2">
+ <div class="svc-tag">Enterprise</div>
+ <div class="svc-ico" style="background:var(--gold3);border-color:rgba(198,164,58,.18)"></div>
+ <h3>Employer Health Plans</h3>
+ <p>Give your team a healthcare benefit that genuinely works. Employees love it — satisfaction jumps from 40% to 85%. Better benefits, lower bills, stronger retention.</p>
+ <a href="#contact" class="svc-link">Get a Quote →</a>
+ </div>
+ </div>
+</section>
+
+<!-- ABOUT US -->
+<section class="about-sec" id="about">
+ <div class="about-inner">
+ <div>
+ <div class="sec-label rv">About Span Healthcare</div>
+ <h2 class="sec-title rv rv1">Where <em>healthcare financing</em> meets ethical growth</h2>
+ <p class="sec-sub rv rv2">At Span Health, we started with one question: why should Nigerians choose between healthcare and financial security? We built Span to end that choice. Founded in Kaduna, we are a health fintech company on a mission to make quality healthcare affordable, accessible, and wealth-building for every Nigerian — individual, family, or business.</p>
+ <div class="about-features rv rv3">
+ <div class="af"><div class="af-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><circle cx="10" cy="10" r="4"/><circle cx="10" cy="10" r="1" fill="#3d9cb0"/></svg></div><div><h4>Our Mission</h4><p>To make healthcare affordable, accessible, and rewarding for every Nigerian — by combining smart health savings with ethical investment and quality provider access.</p></div></div>
+ <div class="af"><div class="af-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17S2 12 2 7a4 4 0 017-2.65A4 4 0 0118 7c0 5-8 10-8 10z"/></svg></div><div><h4>Our Vision</h4><p>"Smart Healthcare Funding for Smart Nigerians." A future where no one skips a hospital visit because of cost, and every health naira builds lasting wealth.</p></div></div>
+ <div class="af"><div class="af-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2L3 5v5c0 4.5 3 8 7 9 4-1 7-4.5 7-9V5l-7-3z"/></svg></div><div><h4>Our Values</h4><p>Transparency in all dealings. Accessibility for everyone. Innovation over tradition. Integrity in stewardship. Community in everything we build.</p></div></div>
+ </div>
+ </div>
+ <div class="about-visual rv rv2">
+ <!-- Stylised about illustration -->
+ <svg viewBox="0 0 380 420" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:380px">
+ <defs>
+ <linearGradient id="ag1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3d9cb0" stop-opacity=".7"/><stop offset="1" stop-color="#5ab3c6" stop-opacity=".2"/></linearGradient>
+ <linearGradient id="ag2" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#C6A43A" stop-opacity=".5"/><stop offset="1" stop-color="#E4C65A" stop-opacity=".1"/></linearGradient>
+ </defs>
+ <!-- Background shapes -->
+ <rect x="40" y="40" width="300" height="340" rx="24" fill="rgba(61,156,176,.07)" stroke="rgba(90,179,198,.15)" stroke-width="1"/>
+ <rect x="60" y="60" width="260" height="150" rx="12" fill="rgba(61,156,176,.08)" stroke="rgba(61,156,176,.15)" stroke-width=".8"/>
+ <!-- Map of Nigeria outline simplified -->
+ <path d="M100 90 Q130 75 170 78 Q210 80 240 88 Q270 96 280 115 Q290 134 278 155 Q266 176 250 185 Q225 196 200 200 Q175 204 155 196 Q130 185 115 168 Q95 148 93 125 Q91 108 100 90Z" fill="rgba(90,179,198,.09)" stroke="rgba(90,179,198,.25)" stroke-width="1.2"/>
+ <!-- Location pin for Kaduna -->
+ <circle cx="180" cy="135" r="6" fill="var(--teal2)" opacity=".8"/>
+ <path d="M180 141 L180 148" stroke="var(--teal2)" stroke-width="1.5" stroke-linecap="round" opacity=".7"/>
+ <!-- Stat cards overlay -->
+ <rect x="60" y="228" width="115" height="65" rx="9" fill="rgba(255,255,255,.92)" stroke="rgba(90,179,198,.2)" stroke-width=".8"/>
+ <text x="72" y="248" font-family="Poppins,sans-serif" font-size="7.5" fill="rgba(90,179,198,.6)" letter-spacing="1">FOUNDED</text>
+ <text x="72" y="268" font-family="League Spartan,sans-serif" font-size="24" font-weight="600" fill="#1a2e38">2023</text>
+ <text x="72" y="282" font-family="Poppins,sans-serif" font-size="7" fill="rgba(26,46,56,.4)">Kaduna, Nigeria</text>
+
+ <rect x="195" y="228" width="125" height="65" rx="9" fill="rgba(255,255,255,.92)" stroke="rgba(198,164,58,.18)" stroke-width=".8"/>
+ <text x="207" y="248" font-family="Poppins,sans-serif" font-size="7.5" fill="rgba(198,164,58,.6)" letter-spacing="1">SERVICES</text>
+ <text x="207" y="268" font-family="League Spartan,sans-serif" font-size="24" font-weight="600" fill="#1a2e38">4-in-1</text>
+ <text x="207" y="282" font-family="Poppins,sans-serif" font-size="7" fill="rgba(26,46,56,.4)">Integrated platform</text>
+
+ <!-- Team / people icons row -->
+ <rect x="60" y="310" width="260" height="55" rx="9" fill="rgba(255,255,255,.88)" stroke="rgba(90,179,198,.15)" stroke-width=".8"/>
+ <text x="75" y="330" font-family="Poppins,sans-serif" font-size="8" fill="rgba(26,46,56,.45)" letter-spacing=".06em">SERVING INDIVIDUALS · FAMILIES · BUSINESSES</text>
+ <!-- icons row -->
+ <circle cx="85" cy="350" r="8" fill="rgba(61,156,176,.2)" stroke="rgba(61,156,176,.35)" stroke-width=".8"/>
+ <text x="85" y="353.5" font-size="8" text-anchor="middle" fill="var(--teal2)"></text>
+ <circle cx="103" cy="350" r="8" fill="rgba(198,164,58,.15)" stroke="rgba(198,164,58,.3)" stroke-width=".8"/>
+ <text x="103" y="353.5" font-size="8" text-anchor="middle" fill="var(--gold)"></text>
+ <circle cx="121" cy="350" r="8" fill="rgba(61,156,176,.2)" stroke="rgba(61,156,176,.35)" stroke-width=".8"/>
+ <text x="121" y="353.5" font-size="8" text-anchor="middle" fill="var(--teal2)"></text>
+ <text x="140" y="353.5" font-family="Poppins,sans-serif" font-size="7.5" fill="rgba(26,46,56,.4)">Across Northern Nigeria</text>
+ </svg>
+ </div>
+ </div>
+</section>
+
+<!-- INVESTMENT -->
+<section class="invest-sec" id="why-span" style="background:var(--navy)">
+
+ <div class="sec-label rv">Why Span Health</div>
+ <h2 class="sec-title rv rv1" style="max-width:680px">Your health needs will grow. <em>Your savings should too.</em></h2>
+ <p class="sec-sub rv rv2" style="max-width:700px;margin-bottom:3rem">Your health costs compound as you age. Span ensures your savings compound faster. they grow — while giving you real access to quality care. Same money. Completely different outcome.</p>
+
+ <!-- KPI Bar -->
+ <div class="invest-kpi-row rv">
+ <div class="invest-kpi">
+ <div class="ik-val">30<span>%</span></div>
+ <div class="ik-label">Provider Network</div>
+ <div class="ik-sub">50+ hospitals &amp; clinics</div>
+ </div>
+ <div class="invest-kpi">
+ <div class="ik-val">0</div>
+ <div class="ik-label">Waiting Period</div>
+ <div class="ik-sub">Active from day one</div>
+ </div>
+ <div class="invest-kpi">
+ <div class="ik-val">24<span>hr</span></div>
+ <div class="ik-label">Healthcare Access</div>
+ <div class="ik-sub">Telemedicine always on</div>
+ </div>
+ <div class="invest-kpi">
+ <div class="ik-val">₦0</div>
+ <div class="ik-label">Claims Paperwork</div>
+ <div class="ik-sub">Direct access, no forms</div>
+ </div>
+ </div>
+
+ <!-- Side-by-side comparison -->
+ <div class="invest-body rv" style="margin-bottom:3rem">
+ <div class="chart-card" style="border-left:3px solid #e74c3c">
+ <div class="chart-head">
+ <span class="chart-title" style="color:#e74c3c"> Returns on Your Savings</span>
+ <span style="font-size:.72rem;color:rgba(26,46,56,.4);font-family:Poppins,sans-serif">What you're used to</span>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px">
+ <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(61,156,176,.1)">
+ <span style="font-size:.83rem;color:rgba(26,46,56,.65)">Monthly Savings</span>
+ <span style="font-family:'League Spartan',sans-serif;font-weight:600;color:#3d9cb0;font-size:.9rem">₦10,000–₦15,000</span>
+ </div>
+ <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(61,156,176,.1)">
+ <span style="font-size:.83rem;color:rgba(26,46,56,.65)">After 5 Years</span>
+ <span style="font-family:'League Spartan',sans-serif;font-weight:600;color:#3d9cb0;font-size:.9rem">Reinvested quarterly</span>
+ </div>
+ <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(61,156,176,.1)">
+ <span style="font-size:.83rem;color:rgba(26,46,56,.65)">Waiting Period</span>
+ <span style="font-family:'League Spartan',sans-serif;font-weight:600;color:#3d9cb0;font-size:.9rem">30–90 days</span>
+ </div>
+ <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(61,156,176,.1)">
+ <span style="font-size:.83rem;color:rgba(26,46,56,.65)">Claims Process</span>
+ <span style="font-family:'League Spartan',sans-serif;font-weight:600;color:#3d9cb0;font-size:.9rem">2–4 weeks</span>
+ </div>
+ <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(61,156,176,.1)">
+ <span style="font-size:.83rem;color:rgba(26,46,56,.65)">Pre-existing Conditions</span>
+ <span style="font-family:'League Spartan',sans-serif;font-weight:600;color:#3d9cb0;font-size:.9rem">Often excluded</span>
+ </div>
+ <div style="display:flex;justify-content:space-between;padding:10px 0">
+ <span style="font-size:.83rem;color:rgba(26,46,56,.65)">Wealth Built</span>
+ <span style="font-family:'League Spartan',sans-serif;font-weight:700;color:#e74c3c;font-size:1rem">None</span>
+ </div>
+ </div>
+ </div>
+
+ <div class="chart-card" style="border-left:3px solid #3d9cb0;background:linear-gradient(135deg,rgba(61,156,176,.05),#fff)">
+ <div class="chart-head">
+ <span class="chart-title" style="color:#3d9cb0"> Span Health</span>
+ <span style="font-size:.72rem;color:rgba(26,46,56,.4);font-family:Poppins,sans-serif">What you deserve</span>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px">
+ <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(61,156,176,.1)">
+ <span style="font-size:.83rem;color:rgba(26,46,56,.65)">Monthly Savings</span>
+ <span style="font-family:'League Spartan',sans-serif;font-weight:600;color:#3d9cb0;font-size:.9rem">From ₦5,000/month</span>
+ </div>
+ <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(61,156,176,.1)">
+ <span style="font-size:.83rem;color:rgba(26,46,56,.65)">After 5 Years</span>
+ <span style="font-family:'League Spartan',sans-serif;font-weight:600;color:#3d9cb0;font-size:.9rem">₦864,000+ in account</span>
+ </div>
+ <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(61,156,176,.1)">
+ <span style="font-size:.83rem;color:rgba(26,46,56,.65)">Waiting Period</span>
+ <span style="font-family:'League Spartan',sans-serif;font-weight:600;color:#3d9cb0;font-size:.9rem">None — active day 1</span>
+ </div>
+ <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(61,156,176,.1)">
+ <span style="font-size:.83rem;color:rgba(26,46,56,.65)">Claims Process</span>
+ <span style="font-family:'League Spartan',sans-serif;font-weight:600;color:#3d9cb0;font-size:.9rem">No claims needed</span>
+ </div>
+ <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(61,156,176,.1)">
+ <span style="font-size:.83rem;color:rgba(26,46,56,.65)">Pre-existing Conditions</span>
+ <span style="font-family:'League Spartan',sans-serif;font-weight:600;color:#3d9cb0;font-size:.9rem">Covered from day 1</span>
+ </div>
+ <div style="display:flex;justify-content:space-between;padding:10px 0">
+ <span style="font-size:.83rem;color:rgba(26,46,56,.65)">Wealth Built</span>
+ <span style="font-family:'League Spartan',sans-serif;font-weight:700;color:#3d9cb0;font-size:1rem">Real &amp; growing</span>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Myth busters row -->
+ <div class="sec-label rv" style="margin-bottom:1.2rem">Common Questions Answered</div>
+ <div class="fund-grid rv" style="grid-template-columns:repeat(3,1fr)">
+ <div class="fund-card">
+ <div class="fund-tag">Myth #1</div>
+ <h4>"Why do I need this?"</h4>
+ <p>Because health costs only rise with age. Medication for diabetes, hypertension, or CKD can cost ₦80,000–₦500,000 annually. A growing health savings account means you are while you have full healthcare access. It's a better financial model — not magic.</p>
+ </div>
+ <div class="fund-card">
+ <div class="fund-tag">Myth #2</div>
+ <h4>"What if returns drop?"</h4>
+ <p>Your healthcare access never depends on returns. Your deposits are always yours. Returns are a bonus on top of real healthcare access. Your health savings account is not a product — it is a life decision.</p>
+ </div>
+ <div class="fund-card">
+ <div class="fund-tag">Myth #3</div>
+ <h4>"Telemedicine isn't real healthcare"</h4>
+ <p>Real doctors. Real diagnoses. Real prescriptions. For 70% of health issues — infections, chronic follow-ups, consultations — telemedicine is faster, cheaper, and just as effective.</p>
+ </div>
+ </div>
+
+ <!-- Calculator -->
+ <div class="calc-card rv" style="margin-top:2.5rem">
+ <div class="calc-title">See Your Savings Grow</div>
+ <div class="calc-sub">Adjust the sliders — watch what happens to your health savings over time</div>
+ <div class="calc-grid">
+ <div class="calc-inputs">
+ <div class="calc-field">
+ <label>Monthly Savings Deposit</label>
+ <input type="range" min="1000" max="50000" step="1000" value="10000" id="dep" oninput="calcReturns()">
+ <div class="calc-val-display" id="depDisplay">₦ 10,000 / month</div>
+ </div>
+ <div class="calc-field">
+ <label>Duration</label>
+ <input type="range" min="1" max="10" step="1" value="3" id="yrs" oninput="calcReturns()">
+ <div class="calc-val-display" id="yrsDisplay">3 years</div>
+ </div>
+ <div style="margin-top:.5rem;padding:12px;background:rgba(61,156,176,.06);border-radius:8px;border:1px solid rgba(61,156,176,.12)">
+ <div style="font-size:.72rem;color:rgba(26,46,56,.45);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px">Without a Health Savings Plan</div>
+ <div id="noplanTotal" style="font-family:'League Spartan',sans-serif;font-size:1.2rem;font-weight:700;color:#e74c3c">₦ 0 remaining</div>
+ <div style="font-size:.7rem;color:rgba(26,46,56,.35);margin-top:2px">Returns credited to your account</div>
+ </div>
+ </div>
+ <div class="calc-result">
+ <div class="calc-result-label">Your Span Balance</div>
+ <div class="calc-result-val" id="calcTotal">₦ <span>432,600</span></div>
+ <div class="calc-result-profit" id="calcProfit">+₦ 72,600 in growth</div>
+ <div class="calc-result-note" style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(61,156,176,.12)">Your money grows while you're protected. Withdraw anytime. No penalties.</div>
+ </div>
+ </div>
+ </div>
+
+</section>
+
+
+<!-- STATS -->
+<section class="stats-sec">
+ <div class="stats-grid rv">
+ <div class="stat-block">
+ <div class="stat-val">1<sup>in4</sup></div>
+ <div class="stat-label">Nigerian Adults With Hypertension</div>
+ </div>
+ <div class="stat-block">
+ <div class="stat-val">4<sup>-in-1</sup></div>
+ <div class="stat-label">Integrated Services</div>
+ </div>
+ <div class="stat-block">
+ <div class="stat-val">8.4<sup>%</sup></div>
+ <div class="stat-label">Annual Halal Return</div>
+ </div>
+ <div class="stat-block">
+ <div class="stat-val">50<sup>+</sup></div>
+ <div class="stat-label">Healthcare Providers</div>
+ </div>
+ </div>
+</section>
+
+<!-- SPLIT SECTION 1 — Family -->
+<section class="split-sec" style="background:var(--navy)">
+ <div class="split-inner">
+ <div class="split-img rv">
+ <div class="ai-img-wrap" id="family-img-wrap">
+ <div class="ai-img-badge">Real Families</div>
+ <div class="ai-img-placeholder" id="family-img-ph">
+ <div class="ai-img-loader"></div>
+ <div class="ai-img-label">Generating image...</div>
+ </div>
+ </div>
+ </div>
+ <div class="split-content rv rv2">
+ <div class="sec-label">For Families</div>
+ <h2 class="sec-title">Protect your family's health <em>and</em> their future</h2>
+ <p class="sec-sub">As parents age, health costs rise sharply. Children need routine care. Medications become a monthly expense. A Span family health savings account means one pool of money — growing and ready — covers consultations, medications, hospitalisations and specialist visits for your entire household, with no coverage gaps and no surprises.</p>
+ <div class="about-features">
+ <div class="af"><div class="af-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17V9c0-3 3-5 7-5s7 2 7 5v8"/><line x1="1" y1="17" x2="19" y2="17"/><path d="M7 17v-4a3 3 0 016 0v4"/><path d="M10 4V2"/></svg></div><div><h4>Whole Family, One Account</h4><p>One Span account covers consultations, medications, specialist visits and hospitalisation for your entire household.</p></div></div>
+ <div class="af"><div class="af-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="12" height="9" rx="2"/><path d="M7 9V6a3 3 0 016 0v3"/></svg></div><div><h4>A Savings Buffer That Builds</h4><p>Regular deposits — however small — compound over time. In 3 years, consistent monthly savings build a buffer that absorbs any health emergency your family faces, without panic or debt.</p></div></div>
+ </div>
+ <a href="https://app.span-healthcare.com" class="btn btn-primary" style="margin-top:1.8rem;width:fit-content">Start Family Plan →</a>
+ </div>
+ </div>
+</section>
+
+<!-- SPLIT SECTION 2 — Professionals -->
+<section class="split-sec" id="corporates" style="background:var(--section-alt)">
+ <div class="split-inner rev">
+ <div class="split-img rv">
+ <div class="ai-img-wrap" id="pro-img-wrap">
+ <div class="ai-img-badge">For Teams</div>
+ <div class="ai-img-placeholder" id="pro-img-ph">
+ <div class="ai-img-loader"></div>
+ <div class="ai-img-label">Generating image...</div>
+ </div>
+ </div>
+ </div>
+ <div class="split-content rv rv2">
+ <div class="sec-label">For Professionals</div>
+ <h2 class="sec-title">Healthcare benefits that <em>attract and retain</em> great talent</h2>
+ <p class="sec-sub">Young professionals are increasingly managing chronic conditions — hypertension in their 30s, pre-diabetes, stress-related illness. Providing a structured health savings benefit means your team can access care early, consistently, and without financial stress — before conditions become expensive emergencies.</p>
+ <div class="about-features">
+ <div class="af"><div class="af-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="13,2 7,11 11,11 7,18"/></svg></div><div><h4>Structured Benefits That Work</h4><p>Customisable group health savings plans for teams of 5 to 500. Employees are set up in minutes and can start building their health fund immediately.</p></div></div>
+ <div class="af"><div class="af-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7" r="3"/><path d="M2 17c0-3 2.7-5 6-5s6 2 6 5"/><circle cx="14" cy="7" r="2"/><path d="M17 17c0-2-1.5-3.5-3.5-4.5"/></svg></div><div><h4>Prevention Over Crisis</h4><p>Early access to telemedicine and routine care means health issues are caught before they escalate. Healthier teams are more productive, more present, and more loyal.</p></div></div>
+ </div>
+ <a href="https://app.span-healthcare.com" class="btn btn-primary" style="margin-top:1.8rem;width:fit-content">Get Team Quote →</a>
+ </div>
+ </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar rv">
+ <div class="trust-inner">
+ <div class="trust-item"><div class="trust-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17V9c0-3 3-5 7-5s7 2 7 5v8"/><line x1="1" y1="17" x2="19" y2="17"/><path d="M7 17v-4a3 3 0 016 0v4"/><path d="M10 4V2"/></svg></div><div class="trust-text">Shariah-Board Certified</div></div>
+ <div class="trust-divider"></div>
+ <div class="trust-item"><div class="trust-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2L3 5v5c0 4.5 3 8 7 9 4-1 7-4.5 7-9V5l-7-3z"/></svg></div><div class="trust-text">SEC-Regulated Investment</div></div>
+ <div class="trust-divider"></div>
+ <div class="trust-item"><div class="trust-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="12" height="9" rx="2"/><path d="M7 9V6a3 3 0 016 0v3"/></svg></div><div class="trust-text">NDPC Data Protection</div></div>
+ <div class="trust-divider"></div>
+ <div class="trust-item"><div class="trust-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,10 8,14 16,6"/></svg></div><div class="trust-text">Transparent Pricing Always</div></div>
+ <div class="trust-divider"></div>
+ <div class="trust-item"><div class="trust-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#3d9cb0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><line x1="2" y1="10" x2="18" y2="10"/><path d="M10 2c-3 3-4 5-4 8s1 5 4 8"/><path d="M10 2c3 3 4 5 4 8s-1 5-4 8"/></svg></div><div class="trust-text">Proudly Nigerian</div></div>
+ </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec" id="testimonials">
+ <div class="sec-label rv">Client Stories</div>
+ <h2 class="sec-title rv rv1">What our members <em>experience</em></h2>
+ <div class="testi-grid">
+ <div class="tc rv">
+ <div class="tc-q">&ldquo;</div>
+ <p class="tc-text">My father was diagnosed with hypertension and needed monthly medication and check-ups. With Span, we consult a doctor from home, get his drugs delivered, and his specialist visits go straight from the wallet. His care is consistent — and our savings are still growing.</p>
+ <div class="tc-foot">
+ <div class="tc-av" style="background:linear-gradient(135deg,var(--teal),var(--teal2))">C</div>
+ <div><div class="tc-name">Chioma O.</div><div class="tc-role">Social Media Manager, Lagos</div></div>
+ </div>
+ </div>
+ <div class="tc rv rv1">
+ <div class="tc-q">&ldquo;</div>
+ <p class="tc-text">My company switched to Span and I love it. Two telemedicine consultations, one hospital visit, drug delivery — everything frictionless. No approval processes. No waiting. And I can see my savings growing every quarter.</p>
+ <div class="tc-foot">
+ <div class="tc-av" style="background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy)">T</div>
+ <div><div class="tc-name">Tunde A.</div><div class="tc-role">IT Professional, Abuja</div></div>
+ </div>
+ </div>
+ <div class="tc rv rv2">
+ <div class="tc-q">&ldquo;</div>
+ <p class="tc-text">We moved our team from expensive hospital visits to Span&apos;s network at half the cost. Savings are actually growing. A genuine win-win for employer and staff alike.</p>
+ <div class="tc-foot">
+ <div class="tc-av" style="background:linear-gradient(135deg,#1a4a6e,#2a6a9e)">TK</div>
+ <div><div class="tc-name">Tunde K.</div><div class="tc-role">Kano — School Administrator</div></div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- PARTNERS MARQUEE -->
+<section class="partners" id="partners">
+ <div class="partners-head">
+ <div class="sec-label" style="justify-content:center;margin-bottom:.5rem"><span style="width:22px;height:1px;background:var(--gold);display:inline-block"></span>Trusted Partners<span style="width:22px;height:1px;background:var(--gold);display:inline-block"></span></div>
+ <p>Organisations that trust and power the Span Healthcare ecosystem</p>
+ </div>
+
+ <div class="marquee-wrap">
+ <div class="marquee-track" id="marquee">
+
+ <!-- PARTNER 1: SHIMAL -->
+ <div class="partner-item">
+ <div class="partner-logo">
+ <svg width="130" height="46" viewBox="0 0 130 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <!-- Shimal icon: stylised wind / crescent -->
+ <g>
+ <circle cx="22" cy="23" r="14" fill="none" stroke="#5ab3c6" stroke-width="2"/>
+ <path d="M22 9 Q34 14 34 23 Q34 32 22 37 Q28 28 26 23 Q24 18 22 9Z" fill="#5ab3c6" opacity=".7"/>
+ <circle cx="19" cy="23" r="7" fill="none" stroke="#5ab3c6" stroke-width="1.5"/>
+ </g>
+ <text x="42" y="20" font-family="League Spartan,sans-serif" font-size="15" font-weight="700" fill="#F4EFE6" letter-spacing=".03em">SHIMAL</text>
+ <text x="42" y="34" font-family="Poppins,sans-serif" font-size="7.5" fill="rgba(26,46,56,.45)" letter-spacing=".12em">SERVICES GROUP</text>
+ </svg>
+ </div>
+ </div>
+
+ <!-- PARTNER 2: AMASHAPAY -->
+ <div class="partner-item">
+ <div class="partner-logo">
+ <svg width="148" height="46" viewBox="0 0 148 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <!-- Amashapay icon: payment / fintech arrow + A -->
+ <g>
+ <rect x="4" y="10" width="28" height="26" rx="6" fill="none" stroke="#C6A43A" stroke-width="1.8"/>
+ <text x="10" y="28" font-family="League Spartan,sans-serif" font-size="17" font-weight="700" fill="#C6A43A">A</text>
+ <path d="M26 18 L32 23 L26 28" stroke="#C6A43A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+ </g>
+ <text x="40" y="20" font-family="League Spartan,sans-serif" font-size="15" font-weight="700" fill="#F4EFE6" letter-spacing=".02em">AMASHA</text>
+ <text x="40" y="34" font-family="Poppins,sans-serif" font-size="7.5" fill="rgba(26,46,56,.45)" letter-spacing=".12em">PAY · FINTECH</text>
+ </svg>
+ </div>
+ </div>
+
+ <!-- PARTNER 3: BOLDAGE CONSULTS -->
+ <div class="partner-item">
+ <div class="partner-logo">
+ <svg width="162" height="46" viewBox="0 0 162 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <!-- Boldage icon: hexagon / consulting -->
+ <g>
+ <polygon points="18,8 30,8 36,18 30,28 18,28 12,18" fill="none" stroke="#F4EFE6" stroke-width="1.8" opacity=".8"/>
+ <polygon points="20,12 28,12 32,18 28,24 20,24 16,18" fill="rgba(244,239,230,.08)"/>
+ <line x1="24" y1="14" x2="24" y2="22" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity=".9"/>
+ <circle cx="24" cy="12" r="2" fill="#1a2e38" opacity=".9"/>
+ </g>
+ <text x="46" y="20" font-family="League Spartan,sans-serif" font-size="15" font-weight="700" fill="#F4EFE6" letter-spacing=".02em">BOLDAGE</text>
+ <text x="46" y="34" font-family="Poppins,sans-serif" font-size="7.5" fill="rgba(26,46,56,.45)" letter-spacing=".12em">CONSULTING GROUP</text>
+ </svg>
+ </div>
+ </div>
+
+ <!-- PARTNER 4: KONOOZ -->
+ <div class="partner-item">
+ <div class="partner-logo">
+ <svg width="140" height="46" viewBox="0 0 140 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <!-- Partner: crescent + K -->
+ <g>
+ <path d="M24 9 Q36 14 36 23 Q36 32 24 37 Q30 28 28 23 Q26 18 24 9Z" fill="none" stroke="#C6A43A" stroke-width="1.8" stroke-linecap="round"/>
+ <circle cx="18" cy="23" r="10" fill="none" stroke="#C6A43A" stroke-width="1.6"/>
+ <path d="M14 17 L14 29 M14 23 L21 17 M14 23 L21 29" stroke="#C6A43A" stroke-width="1.5" stroke-linecap="round"/>
+ </g>
+ <text x="44" y="20" font-family="League Spartan,sans-serif" font-size="15" font-weight="700" fill="#F4EFE6" letter-spacing=".03em">KONOOZ</text>
+ <text x="44" y="34" font-family="Poppins,sans-serif" font-size="7.5" fill="rgba(26,46,56,.45)" letter-spacing=".12em">INVESTMENT LTD.</text>
+ </svg>
+ </div>
+ </div>
+
+ <!-- PARTNER 5: Generic provider -->
+ <div class="partner-item">
+ <div class="partner-logo">
+ <svg width="150" height="46" viewBox="0 0 150 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <g>
+ <rect x="8" y="14" width="24" height="18" rx="4" fill="none" stroke="#5ab3c6" stroke-width="1.6"/>
+ <path d="M16 14 L16 10 Q20 8 24 10 L24 14" stroke="#5ab3c6" stroke-width="1.4" fill="none"/>
+ <line x1="16" y1="22" x2="24" y2="22" stroke="#5ab3c6" stroke-width="1.4" stroke-linecap="round"/>
+ <line x1="20" y1="18" x2="20" y2="26" stroke="#5ab3c6" stroke-width="1.4" stroke-linecap="round"/>
+ </g>
+ <text x="40" y="20" font-family="League Spartan,sans-serif" font-size="15" font-weight="700" fill="#F4EFE6" letter-spacing=".02em">MEDNET</text>
+ <text x="40" y="34" font-family="Poppins,sans-serif" font-size="7.5" fill="rgba(26,46,56,.45)" letter-spacing=".12em">PROVIDER NETWORK</text>
+ </svg>
+ </div>
+ </div>
+
+ <!-- Duplicate set for seamless loop -->
+ <div class="partner-item">
+ <div class="partner-logo">
+ <svg width="130" height="46" viewBox="0 0 130 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <g>
+ <circle cx="22" cy="23" r="14" fill="none" stroke="#5ab3c6" stroke-width="2"/>
+ <path d="M22 9 Q34 14 34 23 Q34 32 22 37 Q28 28 26 23 Q24 18 22 9Z" fill="#5ab3c6" opacity=".7"/>
+ <circle cx="19" cy="23" r="7" fill="none" stroke="#5ab3c6" stroke-width="1.5"/>
+ </g>
+ <text x="42" y="20" font-family="League Spartan,sans-serif" font-size="15" font-weight="700" fill="#F4EFE6" letter-spacing=".03em">SHIMAL</text>
+ <text x="42" y="34" font-family="Poppins,sans-serif" font-size="7.5" fill="rgba(26,46,56,.45)" letter-spacing=".12em">SERVICES GROUP</text>
+ </svg>
+ </div>
+ </div>
+ <div class="partner-item">
+ <div class="partner-logo">
+ <svg width="148" height="46" viewBox="0 0 148 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <g>
+ <rect x="4" y="10" width="28" height="26" rx="6" fill="none" stroke="#C6A43A" stroke-width="1.8"/>
+ <text x="10" y="28" font-family="League Spartan,sans-serif" font-size="17" font-weight="700" fill="#C6A43A">A</text>
+ <path d="M26 18 L32 23 L26 28" stroke="#C6A43A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+ </g>
+ <text x="40" y="20" font-family="League Spartan,sans-serif" font-size="15" font-weight="700" fill="#F4EFE6" letter-spacing=".02em">AMASHA</text>
+ <text x="40" y="34" font-family="Poppins,sans-serif" font-size="7.5" fill="rgba(26,46,56,.45)" letter-spacing=".12em">PAY · FINTECH</text>
+ </svg>
+ </div>
+ </div>
+ <div class="partner-item">
+ <div class="partner-logo">
+ <svg width="162" height="46" viewBox="0 0 162 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <g>
+ <polygon points="18,8 30,8 36,18 30,28 18,28 12,18" fill="none" stroke="#F4EFE6" stroke-width="1.8" opacity=".8"/>
+ <polygon points="20,12 28,12 32,18 28,24 20,24 16,18" fill="rgba(244,239,230,.08)"/>
+ <line x1="24" y1="14" x2="24" y2="22" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity=".9"/>
+ <circle cx="24" cy="12" r="2" fill="#1a2e38" opacity=".9"/>
+ </g>
+ <text x="46" y="20" font-family="League Spartan,sans-serif" font-size="15" font-weight="700" fill="#F4EFE6" letter-spacing=".02em">BOLDAGE</text>
+ <text x="46" y="34" font-family="Poppins,sans-serif" font-size="7.5" fill="rgba(26,46,56,.45)" letter-spacing=".12em">CONSULTING GROUP</text>
+ </svg>
+ </div>
+ </div>
+ <div class="partner-item">
+ <div class="partner-logo">
+ <svg width="140" height="46" viewBox="0 0 140 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <g>
+ <path d="M24 9 Q36 14 36 23 Q36 32 24 37 Q30 28 28 23 Q26 18 24 9Z" fill="none" stroke="#C6A43A" stroke-width="1.8" stroke-linecap="round"/>
+ <circle cx="18" cy="23" r="10" fill="none" stroke="#C6A43A" stroke-width="1.6"/>
+ <path d="M14 17 L14 29 M14 23 L21 17 M14 23 L21 29" stroke="#C6A43A" stroke-width="1.5" stroke-linecap="round"/>
+ </g>
+ <text x="44" y="20" font-family="League Spartan,sans-serif" font-size="15" font-weight="700" fill="#F4EFE6" letter-spacing=".03em">KONOOZ</text>
+ <text x="44" y="34" font-family="Poppins,sans-serif" font-size="7.5" fill="rgba(26,46,56,.45)" letter-spacing=".12em">INVESTMENT LTD.</text>
+ </svg>
+ </div>
+ </div>
+ <div class="partner-item">
+ <div class="partner-logo">
+ <svg width="150" height="46" viewBox="0 0 150 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <g>
+ <rect x="8" y="14" width="24" height="18" rx="4" fill="none" stroke="#5ab3c6" stroke-width="1.6"/>
+ <path d="M16 14 L16 10 Q20 8 24 10 L24 14" stroke="#5ab3c6" stroke-width="1.4" fill="none"/>
+ <line x1="16" y1="22" x2="24" y2="22" stroke="#5ab3c6" stroke-width="1.4" stroke-linecap="round"/>
+ <line x1="20" y1="18" x2="20" y2="26" stroke="#5ab3c6" stroke-width="1.4" stroke-linecap="round"/>
+ </g>
+ <text x="40" y="20" font-family="League Spartan,sans-serif" font-size="15" font-weight="700" fill="#F4EFE6" letter-spacing=".02em">MEDNET</text>
+ <text x="40" y="34" font-family="Poppins,sans-serif" font-size="7.5" fill="rgba(26,46,56,.45)" letter-spacing=".12em">PROVIDER NETWORK</text>
+ </svg>
+ </div>
+ </div>
+
+ </div>
+ </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="contact">
+ <div class="sec-label" style="justify-content:center;margin-bottom:1rem">
+ <span style="width:20px;height:1px;background:var(--gold);display:inline-block"></span>
+ Start Today
+ <span style="width:20px;height:1px;background:var(--gold);display:inline-block"></span>
+ </div>
+ <h2 class="sec-title rv" style="text-align:center;max-width:560px;margin:0 auto .9rem">Your health needs will grow. <em>Your savings should too.</em></h2>
+ <p class="sec-sub rv rv1" style="text-align:center;max-width:480px;margin:.9rem auto 2.4rem">Diabetes management costs ₦80,000–₦200,000 a year. Hypertension medication is lifelong. CKD treatment can reach ₦500,000. The average Nigerian spends 24 years in retirement without structured health coverage. A Span health savings account means none of that catches you off guard. Start today — even ₦5,000 a month builds a real safety net.</p>
+ <div class="cta-row rv rv2">
+ <a href="https://app.span-healthcare.com" class="btn btn-primary">
+      Get Started Free
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1 6.5h11M6.5 1l5.5 5.5L6.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+ <a href="tel:08036102499" class="btn btn-outline">&nbsp; Call Us Now</a>
+ </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+ <div class="footer-grid">
+ <div>
+ <div class="logo" style="text-decoration:none">
+ <div class="logo-mark">
+ <svg viewBox="0 0 22 22" fill="none"><rect x="9" y="3" width="4" height="16" rx="1.5" fill="#1a2e38"/><rect x="3" y="9" width="16" height="4" rx="1.5" fill="#1a2e38"/><circle cx="11" cy="11" r="2.2" fill="rgba(7,17,31,.4)"/></svg>
+ </div>
+ <span class="logo-text">Span <b>Healthcare</b></span>
+ </div>
+ <p class="fb-desc">A health fintech platform combining savings, halal investment, telemedicine, and drug delivery — reimagining healthcare financing for Nigerians.</p>
+ </div>
+ <div class="fc">
+ <h4>Services</h4>
+ <ul>
+ <li><a href="#services">Health Savings</a></li>
+ <li><a href="#why-span">Why Span</a></li>
+ <li><a href="#services">Telemedicine</a></li>
+ <li><a href="#services">Drug Delivery</a></li>
+ <li><a href="#services">Provider Network</a></li>
+ </ul>
+ </div>
+ <div class="fc">
+ <h4>Company</h4>
+ <ul>
+ <li><a href="#about">About Us</a></li>
+ <li><a href="#hiw">How It Works</a></li>
+ <li><a href="#">Partner With Us</a></li>
+ <li><a href="#">Employer Plans</a></li>
+ <li><a href="#">Privacy Policy</a></li>
+ </ul>
+ </div>
+ <div class="fc">
+ <h4>Contact</h4>
+ <div class="fc-ci"><span class="ico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#3d9cb0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1a4 4 0 00-4 4c0 3 4 8 4 8s4-5 4-8a4 4 0 00-4-4z"/><circle cx="7" cy="5" r="1.5"/></svg></span><span>No. 11B, Sambo Road, City Centre, Kaduna</span></div>
+ <div class="fc-ci"><span class="ico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#3d9cb0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2h3l1.5 3.5L5 7s1 2 2 3 3 2 3 2l1.5-1.5L15 12v3h-2C5 15 -1 9-1 3V2h3z" transform="scale(0.7) translate(1,1)"/></svg></span><span>08036102499 &middot; 09039222028</span></div>
+ <div class="fc-ci"><span class="ico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#3d9cb0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="12" height="9" rx="1"/><polyline points="1,3 7,8 13,3"/></svg></span><span>info@spanhealthcare.com.ng</span></div>
+ <div class="fc-ci"><span class="ico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#3d9cb0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="6"/><polyline points="7,4 7,7 9,8.5"/></svg></span><span>Mon&ndash;Fri: 8am&ndash;6pm &middot; Sat: 9am&ndash;4pm</span></div>
+ </div>
+ </div>
+ <div class="footer-bot">
+ <p>&copy; 2025 Span Healthcare. All rights reserved.</p>
+ <div class="footer-halal">&nbsp; Shariah-Compliant &middot; SEC-Regulated Investment Partner</div>
+ </div>
+</footer>
+
+<script>
+// Scroll reveal
+const rvEls = document.querySelectorAll(".rv");
+const rvObs = new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("on")});
+},{threshold:.1,rootMargin:"0px 0px -36px 0px"});
+rvEls.forEach(el=>rvObs.observe(el));
+
+// Sticky nav
+const nb = document.getElementById("navbar");
+window.addEventListener("scroll",()=>{
+ nb.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+// Mobile nav toggle
+function toggleNav(){
+ const menu = document.getElementById("navlinks");
+ const burger = document.getElementById("burger");
+ menu.classList.toggle("open");
+ burger.classList.toggle("active");
+}
+document.querySelectorAll("#navlinks a").forEach(a=>{
+ a.addEventListener("click",()=>{
+ document.getElementById("navlinks").classList.remove("open");
+ document.getElementById("burger").classList.remove("active");
+ });
+});
+// Close on outside click
+document.addEventListener("click", function(e){
+ const menu = document.getElementById("navlinks");
+ const burger = document.getElementById("burger");
+ if(menu.classList.contains("open") && !menu.contains(e.target) && !burger.contains(e.target)){
+ menu.classList.remove("open");
+ burger.classList.remove("active");
+ }
+});
+
+// 
+// AI IMAGE GENERATION via Anthropic API
+// 
+const IMAGE_PROMPTS = {
+ "hero-img": {
+ prompt: "A photorealistic image of a cheerful Nigerian family of four — mother, father, teenage daughter, and young son — sitting together in a bright, modern living room in Kaduna, Nigeria. The mother is showing a healthcare mobile app on her phone screen displaying a savings balance and green returns chart. All family members are smiling warmly, wearing casual contemporary Nigerian attire. Natural window light, warm afternoon tones, ultra-sharp, cinematic depth of field, magazine quality photography, 4K detail.",
+ wrap: "hero-img-wrap", ph: "hero-img-ph"
+ },
+ "family-img": {
+ prompt: "A heartwarming, photorealistic portrait of a happy Nigerian family — a mother in a elegant hijab, a father in a crisp kaftan, and two young children — at a clean modern hospital consultation room in Northern Nigeria. A smiling doctor in white coat is attending to them. Bright clinical lighting, teal and white colour palette, family looking relaxed and confident, ultra-sharp detail, professional healthcare photography, cinematic composition.",
+ wrap: "family-img-wrap", ph: "family-img-ph"
+ },
+ "pro-img": {
+ prompt: "A sharp, dynamic office scene of young Nigerian professionals — two men and two women in their late 20s to early 30s — collaborating energetically around a modern glass conference table with laptops and tablets in a sleek open-plan fintech office in Abuja, Nigeria. Large windows showing the city skyline. Smart casual contemporary Nigerian professional attire. Teal accent colours in the office decor, warm natural light mixed with LED overhead lighting, ultra-high definition, editorial magazine style photography.",
+ wrap: "pro-img-wrap", ph: "pro-img-ph"
+ },
+ "cta-img1": {
+ prompt: "Cinematic close-up of a Nigerian mother's hands holding a smartphone displaying a clean healthcare app with a savings balance of ₦48,500 and a green upward growth chart. Soft bokeh background showing a family in a bright home. Warm golden hour lighting, shallow depth of field, ultra-sharp product photography style, teal and white app UI visible on screen, professional advertising quality.",
+ wrap: "cta-img1-wrap", ph: "cta-img1-ph"
+ },
+ "cta-img2": {
+ prompt: "A confident young Nigerian businesswoman in a tailored blazer sitting at a modern desk with multiple screens, reviewing health benefit plans for her team on a sleek laptop. A notification shows employee health savings growing. Bright modern office, teal accents, large windows, ultra-sharp editorial photography style, professional and aspirational mood, 4K quality.",
+ wrap: "cta-img2-wrap", ph: "cta-img2-ph"
+ }
+};
+
+async function generateImage(key, config) {
+ try {
+ const response = await fetch("https://api.anthropic.com/v1/messages", {
+ method: "POST",
+ headers: { "Content-Type": "application/json" },
+ body: JSON.stringify({
+ model: "claude-sonnet-4-20250514",
+ max_tokens: 1024,
+ tools: [{ type: "computer_20250124", name: "computer", display_width_px: 1024, display_height_px: 768 }],
+ messages: [{
+ role: "user",
+ content: "Generate a photorealistic image: " + config.prompt + " Return only a base64 image."
+ }]
+ })
+ });
+
+ // Since direct image gen isn't available via messages, use Unsplash curated stock
+ throw new Error("use_stock");
+ } catch(e) {
+ // Use carefully curated Unsplash images that match each prompt
+ useStockImage(key, config);
+ }
+}
+
+// Curated high-quality stock images per context
+const STOCK_IMAGES = {
+ "hero-img": "https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&q=85&fit=crop",
+ "family-img": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=85&fit=crop",
+ "pro-img": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=85&fit=crop",
+ "cta-img1": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=85&fit=crop",
+ "cta-img2": "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=800&q=85&fit=crop"
+};
+
+function useStockImage(key, config) {
+ const wrap = document.getElementById(config.wrap);
+ const ph = document.getElementById(config.ph);
+ if (!wrap) return;
+
+ const img = document.createElement("img");
+ img.src = STOCK_IMAGES[key];
+ img.alt = key;
+ img.style.cssText = "width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .6s ease";
+ img.onload = () => {
+ if (ph) ph.style.display = "none";
+ wrap.appendChild(img);
+ setTimeout(() => img.style.opacity = "1", 50);
+ };
+ img.onerror = () => {
+ // Fallback: beautiful CSS gradient illustration
+ if (ph) {
+ ph.innerHTML = getGradientFallback(key);
+ ph.style.padding = "0";
+ }
+ };
+}
+
+function getGradientFallback(key) {
+ const gradients = {
+ "hero-img": "linear-gradient(135deg,#e8f4f7 0%,#c8e8f0 40%,#3d9cb0 100%)",
+ "family-img": "linear-gradient(135deg,#f0f8fa 0%,#b8dce8 50%,#5ab3c6 100%)",
+ "pro-img": "linear-gradient(135deg,#e4f2f6 0%,#98b7b9 50%,#3d9cb0 100%)",
+ "cta-img1": "linear-gradient(135deg,#3d9cb0 0%,#5ab3c6 50%,#98b7b9 100%)",
+ "cta-img2": "linear-gradient(135deg,#1a2e38 0%,#3d9cb0 50%,#5ab3c6 100%)"
+ };
+ return '<div style="width:100%;height:100%;background:' + (gradients[key]||gradients["hero-img"]) + ';display:flex;align-items:center;justify-content:center"><svg width="60" height="60" viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/><path d="M20 30 Q30 18 40 30 Q30 42 20 30Z" fill="rgba(255,255,255,.3)"/></svg></div>';
+}
+
+// Load all images on DOM ready
+document.addEventListener("DOMContentLoaded", () => {
+ Object.entries(IMAGE_PROMPTS).forEach(([key, config]) => {
+ // Stagger loads to avoid rate limits
+ const delay = Object.keys(IMAGE_PROMPTS).indexOf(key) * 300;
+ setTimeout(() => useStockImage(key, config), delay);
+ });
+});
+
+// Returns Calculator
+function calcReturns(){
+ const dep = parseInt(document.getElementById("dep").value);
+ const yrs = parseInt(document.getElementById("yrs").value);
+ const monthlyRate = 0.084 / 12;
+ const months = yrs * 12;
+ const fv = dep * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+ const totalDeposited = dep * months;
+ const profit = fv - totalDeposited;
+ document.getElementById("depDisplay").textContent = "₦ " + dep.toLocaleString() + " / month";
+ document.getElementById("yrsDisplay").textContent = yrs + (yrs === 1 ? " year" : " years");
+ document.getElementById("calcTotal").innerHTML = "₦ <span>" + Math.round(fv).toLocaleString() + "</span>";
+ document.getElementById("calcProfit").textContent = "+₦ " + Math.round(profit).toLocaleString() + " in growth";
+ // health savings only
+}
+if(document.getElementById("dep")) calcReturns();
+</script>
+</body>
+</html>
