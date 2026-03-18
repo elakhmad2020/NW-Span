@@ -76,7 +76,7 @@ nav ul a:hover::after{width:100%}
  display:none;
  position:fixed;top:0;left:0;right:0;
  flex-direction:column;
- background:rgba(255,255,255,.99);
+ background:#98b7b9;
  padding:80px 6% 2rem;
  gap:0;
  border-bottom:1px solid rgba(61,156,176,.2);
@@ -476,6 +476,70 @@ footer{background:#1a2e38;border-top:1px solid rgba(255,255,255,.08);padding:56p
  .hero-img-col{height:320px}
  .trust-inner{gap:1.5rem}
  .trust-divider{display:none}
+}
+/* FIX FOR MOBILE REVEAL ISSUE */
+@media(max-width:860px){
+ /* Force all sections to be visible on mobile */
+ .rv {
+ opacity: 1 !important;
+ transform: translateY(0) !important;
+ }
+ 
+ /* Ensure the hero image column shows */
+ .hero-img-col {
+ display: block !important;
+ height: 320px;
+ }
+ 
+ /* Fix for any hidden elements */
+ .hero-left, .hero-right, .hero-img-col, section, div {
+ visibility: visible !important;
+ }
+ 
+ /* Ensure the marquee works properly */
+ .marquee-track {
+ animation: scroll 30s linear infinite;
+ width: max-content;
+ }
+ 
+ /* Fix for calculator on mobile */
+ .calc-grid {
+ grid-template-columns: 1fr;
+ }
+ 
+ .calc-inputs, .calc-result {
+ width: 100%;
+ }
+}
+
+/* Additional fix for very small screens */
+@media(max-width:480px){
+ .hero h1 {
+ font-size: 2rem;
+ }
+ 
+ .hero-desc {
+ font-size: 0.9rem;
+ }
+ 
+ .hero-actions {
+ flex-direction: column;
+ align-items: stretch;
+ }
+ 
+ .btn {
+ text-align: center;
+ justify-content: center;
+ width: 100%;
+ }
+ 
+ .hero-kpis {
+ gap: 1rem;
+ }
+ 
+ .kpi-val {
+ font-size: 1.5rem;
+ }
 }
 </style>
 </head>
@@ -1064,46 +1128,69 @@ footer{background:#1a2e38;border-top:1px solid rgba(255,255,255,.08);padding:56p
 </section>
 
 <!-- PARTNERS MARQUEE -->
+<!-- PARTNERS MARQUEE - FIXED -->
 <section class="partners" id="partners">
- <div class="partners-head">
- <div class="sec-label" style="justify-content:center;margin-bottom:.5rem"><span style="width:22px;height:1px;background:var(--gold);display:inline-block"></span>Trusted Partners<span style="width:22px;height:1px;background:var(--gold);display:inline-block"></span></div>
- <p>Organisations that trust and power the Span Healthcare ecosystem</p>
+  <div class="partners-head">
+  <div class="sec-label" style="justify-content:center;margin-bottom:.5rem"><span style="width:22px;height:1px;background:var(--gold);display:inline-block"></span>Trusted Partners<span style="width:22px;height:1px;background:var(--gold);display:inline-block"></span></div>
+  <p>Organisations that trust and power the Span Healthcare ecosystem</p>
+  </div>
+ 
+  <div class="marquee-wrap">
+  <div class="marquee-track" id="marquee">
+ 
+  <!-- First set of logos -->
+  <div class="partner-item">
+  <div class="partner-logo">
+ <img src="log.png" alt="Windex" style="height:46px;width:auto;object-fit:contain;" />
  </div>
-
- <div class="marquee-wrap">
- <div class="marquee-track" id="marquee">
-
- <!-- PARTNER 1: WINDEX-->
- <div class="partner-item">
- <div class="partner-logo">
-<img src="log.png" alt="Windex" style="height:46px;width:auto;object-fit:contain;" />
-</div>
+  </div>
+ 
+  <div class="partner-item">
+  <div class="partner-logo">
+   <img src="amashpay black.png" alt="AMASHAPAY" style="height:46px;width:auto;object-fit:contain;" />
+  </div>
+  </div>
+ 
+  <div class="partner-item">
+  <div class="partner-logo">
+   <img src="BAC.jpg" alt="Boldage Consult" style="height:46px;width:auto;object-fit:contain;" />
+  </div>
+  </div>
+ 
+  <div class="partner-item">
+  <div class="partner-logo">
+   <img src="Konooz.png" alt="Konooz Investment" style="height:46px;width:auto;object-fit:contain;" />
+  </div>
+  </div>
+ 
+  <!-- Duplicate set for seamless loop -->
+  <div class="partner-item">
+  <div class="partner-logo">
+ <img src="log.png" alt="Windex" style="height:46px;width:auto;object-fit:contain;" />
  </div>
-
- <!-- PARTNER 2: AMASHAPAY -->
- <div class="partner-item">
- <div class="partner-logo">
-  <img src="amashpay black.png" alt="AMASHAPAY" style="height:46px;width:auto;object-fit:contain;" />
- </div>
- </div>
-
- <!-- PARTNER 3: BOLDAGE CONSULTS -->
- <div class="partner-item">
- <div class="partner-logo">
-  <img src="BAC.jpg" alt="Boldage Consult" style="height:46px;width:auto;object-fit:contain;" />
- </div>
- </div>
-
- <!-- PARTNER 4: KONOOZ -->
- <div class="partner-item">
- <div class="partner-logo">
-  <img src="Konooz.png" alt="Konooz Investment" style="height:46px;width:auto;object-fit:contain;" />
- </div>
- </div>
-
- </div>
- </div>
-</section>
+  </div>
+ 
+  <div class="partner-item">
+  <div class="partner-logo">
+   <img src="amashpay black.png" alt="AMASHAPAY" style="height:46px;width:auto;object-fit:contain;" />
+  </div>
+  </div>
+ 
+  <div class="partner-item">
+  <div class="partner-logo">
+   <img src="BAC.jpg" alt="Boldage Consult" style="height:46px;width:auto;object-fit:contain;" />
+  </div>
+  </div>
+ 
+  <div class="partner-item">
+  <div class="partner-logo">
+   <img src="Konooz.png" alt="Konooz Investment" style="height:46px;width:auto;object-fit:contain;" />
+  </div>
+  </div>
+ 
+  </div> <!-- Close marquee-track -->
+  </div> <!-- Close marquee-wrap -->
+ </section>
 
 <!-- CTA -->
 <section class="cta-sec" id="contact">
